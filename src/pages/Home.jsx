@@ -35,33 +35,8 @@ export default function Home() {
             <div className="lg:max-w-xs">
               <p className="font-body text-mist text-base leading-relaxed mb-6">
                 Proven digital advertising courses, templates, and strategy
-                sessions to help Nigerian business owners scale through
-                profitable ads.
+                sessions to help business owners scale through profitable ads.
               </p>
-              {/* <div className="flex items-center gap-6">
-                <div>
-                  <p className="font-display text-3xl text-[#4a9eff]">
-                    {products.length}
-                  </p>
-                  <p className="font-mono text-xs text-mist uppercase tracking-widest">
-                    Resources
-                  </p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div>
-                  <p className="font-display text-3xl text-white">🔥</p>
-                  <p className="font-mono text-xs text-mist uppercase tracking-widest">
-                    Proven
-                  </p>
-                </div>
-                <div className="w-px h-10 bg-white/10" />
-                <div>
-                  <p className="font-display text-3xl text-white">₦</p>
-                  <p className="font-mono text-xs text-mist uppercase tracking-widest">
-                    Nigerian Only
-                  </p>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>
