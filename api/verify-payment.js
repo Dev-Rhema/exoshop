@@ -169,6 +169,15 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
+    // Debug: Check if secret key exists
+    if (!process.env.PAYSTACK_SECRET_KEY) {
+      console.error("ERROR: PAYSTACK_SECRET_KEY is not set!");
+      return res.status(500).json({ error: "Server configuration error: Missing Paystack secret key" });
+    }
+
+    console.log("Verifying with reference:", reference);
+    console.log("Secret key exists:", !!process.env.PAYSTACK_SECRET_KEY);
+
     // Verify with Paystack
     const response = await axios.get(
       `https://api.paystack.co/transaction/verify/${reference}`,
@@ -180,7 +189,8 @@ export default async function handler(req, res) {
     );
 
     if (!response.data.status || response.data.data.status !== "success") {
-      return res.status(400).json({ error: "Payment verification failed" });
+      console.error("Paystack verification failed:", response.data);
+      return res.status(400).json({ error: "Payment verification failed", details: response.data });
     }
 
     const transactionData = response.data.data;
