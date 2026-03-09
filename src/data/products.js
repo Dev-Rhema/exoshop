@@ -18,6 +18,8 @@ const products = [
 <img src="/productImgs/vault-result-6.png" alt="Client results 6" style="max-width: 100%; margin: 15px 0; border-radius: 8px;" />
 <img src="/productImgs/vault-result-7.png" alt="Client results 7" style="max-width: 100%; margin: 15px 0; border-radius: 8px;" />
 <img src="/productImgs/vault-result-8.png" alt="Client results 8" style="max-width: 100%; margin: 15px 0; border-radius: 8px;" />
+<img src="/productImgs/vault-result-9.png" alt="Client results 9" style="max-width: 100%; margin: 15px 0; border-radius: 8px;" />
+<img src="/productImgs/vault-result-10.png" alt="Client results 10" style="max-width: 100%; margin: 15px 0; border-radius: 8px;" />
 
 <p style="margin-top: 30px;">Who is this for?</p>
 
