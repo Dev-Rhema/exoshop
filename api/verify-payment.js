@@ -172,7 +172,11 @@ export default async function handler(req, res) {
     // Debug: Check if secret key exists
     if (!process.env.PAYSTACK_SECRET_KEY) {
       console.error("ERROR: PAYSTACK_SECRET_KEY is not set!");
-      return res.status(500).json({ error: "Server configuration error: Missing Paystack secret key" });
+      return res
+        .status(500)
+        .json({
+          error: "Server configuration error: Missing Paystack secret key",
+        });
     }
 
     console.log("Verifying with reference:", reference);
@@ -190,7 +194,9 @@ export default async function handler(req, res) {
 
     if (!response.data.status || response.data.data.status !== "success") {
       console.error("Paystack verification failed:", response.data);
-      return res.status(400).json({ error: "Payment verification failed", details: response.data });
+      return res
+        .status(400)
+        .json({ error: "Payment verification failed", details: response.data });
     }
 
     const transactionData = response.data.data;
