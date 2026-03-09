@@ -1,12 +1,6 @@
 {
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "env": {
-    "PAYSTACK_SECRET_KEY": "@paystack_secret_key",
-    "RESEND_API_KEY": "@resend_api_key",
-    "EMAIL_USER": "@email_user",
-    "FRONTEND_URL": "@frontend_url"
-  },
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs18.x"
