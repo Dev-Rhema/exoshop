@@ -21,9 +21,9 @@ git push -u origin main
 In Vercel project settings, add these under **Settings → Environment Variables**:
 
 ```
-PAYSTACK_SECRET_KEY = sk_test_f70c6fe7b1f2ce32d5a371233cbcca2276693bfa
-RESEND_API_KEY = re_DdGN3u5k_2p7KmSYow1b38RgTBiwHyf7o
-EMAIL_USER = noreply@exodigital.com
+PAYSTACK_SECRET_KEY = your_paystack_test_key_here
+RESEND_API_KEY = your_resend_api_key_here
+EMAIL_USER = your-email@gmail.com
 FRONTEND_URL = https://your-vercel-domain.vercel.app
 ```
 

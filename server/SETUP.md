@@ -19,7 +19,7 @@ npm install
 
 Edit `server/.env`:
 ```
-PAYSTACK_SECRET_KEY=sk_live_5a4badd1a0beb24291c1f9a8294e2bc262332831
+PAYSTACK_SECRET_KEY=your_paystack_secret_key_here
 EMAIL_SERVICE=gmail
 EMAIL_USER=your_email@gmail.com
 EMAIL_PASSWORD=xxxx xxxx xxxx xxxx
