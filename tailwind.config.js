@@ -10,10 +10,11 @@ export default {
       },
       colors: {
         primary: "#4a9eff",
-        ink: "#0A0A0A",
-        ash: "#111111",
-        smoke: "#1A1A1A",
-        mist: "#888888",
+        ink: "#ffffff",
+        ash: "#f8fafc",
+        smoke: "#f1f5f9",
+        mist: "#64748b",
+        dark: "#0f172a",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

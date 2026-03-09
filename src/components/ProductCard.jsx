@@ -3,17 +3,17 @@ import { initiatePaystackCheckout } from "../utils/paystack";
 import { useNavigate } from "react-router-dom";
 
 const TAG_COLORS = {
-  EBOOK: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  COURSE: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-  ASSETS: "bg-orange-500/20 text-orange-300 border-orange-500/30",
-  CODE: "bg-green-500/20 text-green-300 border-green-500/30",
-  DESIGN: "bg-pink-500/20 text-pink-300 border-pink-500/30",
-  CONSULTATION: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
+  EBOOK: "bg-blue-50 text-blue-700 border-blue-200",
+  COURSE: "bg-purple-50 text-purple-700 border-purple-200",
+  ASSETS: "bg-orange-50 text-orange-700 border-orange-200",
+  CODE: "bg-green-50 text-green-700 border-green-200",
+  DESIGN: "bg-pink-50 text-pink-700 border-pink-200",
+  CONSULTATION: "bg-yellow-50 text-yellow-700 border-yellow-200",
 };
 
 const BADGE_COLORS = {
-  BESTSELLER: "bg-primary text-ink",
-  NEW: "bg-blue-400 text-ink",
+  BESTSELLER: "bg-primary text-dark",
+  NEW: "bg-blue-400 text-dark",
   HOT: "bg-red-400 text-white",
 };
 
@@ -58,13 +58,13 @@ export default function ProductCard({ product }) {
   };
 
   const tagColor =
-    TAG_COLORS[product.tag] || "bg-white/10 text-white/70 border-white/20";
+    TAG_COLORS[product.tag] || "bg-dark/5 text-mist border-dark/10";
   const badgeColor = BADGE_COLORS[product.badge];
 
   return (
     <div
       onClick={handleCardClick}
-      className="group relative bg-smoke border border-white/10 hover:border-primary/50 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer"
+      className="group relative bg-ash border border-dark/10 hover:border-primary/50 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer"
     >
       {/* Top accent bar */}
       <div className="h-px w-0 group-hover:w-full bg-primary transition-all duration-500 absolute top-0 left-0 z-10" />
@@ -80,7 +80,7 @@ export default function ProductCard({ product }) {
 
       {/* Product Image */}
       {product.image && (
-        <div className="w-full h-48 overflow-hidden bg-ink">
+        <div className="w-full h-48 overflow-hidden bg-white">
           <img
             src={product.image}
             alt={product.title}
@@ -99,7 +99,7 @@ export default function ProductCard({ product }) {
         </div>
 
         {/* Title */}
-        <h2 className="font-display text-3xl text-white tracking-wide leading-none mb-3 group-hover:text-primary transition-colors duration-300">
+        <h2 className="font-display text-3xl text-dark tracking-wide leading-none mb-3 group-hover:text-primary transition-colors duration-300">
           {product.title.toUpperCase()}
         </h2>
 
@@ -138,7 +138,7 @@ export default function ProductCard({ product }) {
           ) : (
             <button
               onClick={handleBuyClick}
-              className="bg-primary text-ink font-mono text-xs font-semibold tracking-widest uppercase px-5 py-2.5 hover:bg-white transition-colors duration-200 active:scale-95"
+              className="bg-primary text-dark font-mono text-xs font-semibold tracking-widest uppercase px-5 py-2.5 hover:bg-dark hover:text-white transition-colors duration-200 active:scale-95"
             >
               BUY NOW →
             </button>
@@ -148,11 +148,11 @@ export default function ProductCard({ product }) {
 
       {/* Email modal overlay */}
       {emailPrompt && (
-        <div className="absolute inset-0 bg-ink/95 backdrop-blur-sm flex flex-col justify-center p-6 animate-fade-in z-20">
+        <div className="absolute inset-0 bg-white/95 backdrop-blur-sm flex flex-col justify-center p-6 animate-fade-in z-20">
           <p className="font-mono text-xs text-mist uppercase tracking-widest mb-1">
             Buying
           </p>
-          <h3 className="font-display text-2xl text-white mb-4">
+          <h3 className="font-display text-2xl text-dark mb-4">
             {product.title.toUpperCase()}
           </h3>
           <p className="font-body text-sm text-mist mb-4">
@@ -165,7 +165,7 @@ export default function ProductCard({ product }) {
             onChange={(e) => setEmail(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleCheckout()}
             placeholder="your@email.com"
-            className="bg-smoke border border-white/20 focus:border-primary outline-none px-4 py-3 font-mono text-sm text-white placeholder:text-mist/50 mb-2 transition-colors"
+            className="bg-ash border border-dark/20 focus:border-primary outline-none px-4 py-3 font-mono text-sm text-dark placeholder:text-mist/50 mb-2 transition-colors"
           />
           {emailError && (
             <p className="font-mono text-xs text-red-400 mb-3">{emailError}</p>
@@ -174,7 +174,7 @@ export default function ProductCard({ product }) {
           <div className="flex gap-3 mt-2">
             <button
               onClick={handleCheckout}
-              className="flex-1 bg-primary text-ink font-mono text-xs font-semibold uppercase tracking-widest py-3 hover:bg-white transition-colors"
+              className="flex-1 bg-primary text-dark font-mono text-xs font-semibold uppercase tracking-widest py-3 hover:bg-dark hover:text-white transition-colors"
             >
               PROCEED →
             </button>
@@ -184,7 +184,7 @@ export default function ProductCard({ product }) {
                 setEmail("");
                 setEmailError("");
               }}
-              className="px-4 py-3 border border-white/20 font-mono text-xs text-mist hover:text-white hover:border-white/50 transition-colors"
+              className="px-4 py-3 border border-dark/20 font-mono text-xs text-mist hover:text-dark hover:border-dark/50 transition-colors"
             >
               CANCEL
             </button>

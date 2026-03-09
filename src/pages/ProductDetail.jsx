@@ -4,12 +4,12 @@ import { useState } from "react";
 import { initiatePaystackCheckout } from "../utils/paystack";
 
 const TAG_COLORS = {
-  EBOOK: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  COURSE: "bg-purple-500/20 text-purple-300 border-purple-500/30",
-  ASSETS: "bg-orange-500/20 text-orange-300 border-orange-500/30",
-  CODE: "bg-green-500/20 text-green-300 border-green-500/30",
-  DESIGN: "bg-pink-500/20 text-pink-300 border-pink-500/30",
-  CONSULTATION: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
+  EBOOK: "bg-blue-50 text-blue-700 border-blue-200",
+  COURSE: "bg-purple-50 text-purple-700 border-purple-200",
+  ASSETS: "bg-orange-50 text-orange-700 border-orange-200",
+  CODE: "bg-green-50 text-green-700 border-green-200",
+  DESIGN: "bg-pink-50 text-pink-700 border-pink-200",
+  CONSULTATION: "bg-yellow-50 text-yellow-700 border-yellow-200",
 };
 
 export default function ProductDetail() {
@@ -27,14 +27,14 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <main className="min-h-screen bg-ink pt-16 flex items-center justify-center">
+      <main className="min-h-screen bg-white pt-16 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="font-display text-4xl text-white mb-4">
+          <h1 className="font-display text-4xl text-dark mb-4">
             Product Not Found
           </h1>
           <button
             onClick={() => navigate("/")}
-            className="font-mono text-[#4a9eff] hover:text-white transition-colors"
+            className="font-mono text-[#4a9eff] hover:text-dark transition-colors"
           >
             ← Back to Shop
           </button>
@@ -94,7 +94,7 @@ export default function ProductDetail() {
   };
 
   const tagColor =
-    TAG_COLORS[product.tag] || "bg-white/10 text-white/70 border-white/20";
+    TAG_COLORS[product.tag] || "bg-dark/5 text-mist border-dark/10";
 
   const isLongDescription =
     product.description && product.description.length > 500;
@@ -146,13 +146,13 @@ export default function ProductDetail() {
   };
 
   return (
-    <main className="min-h-screen bg-ink pt-16">
+    <main className="min-h-screen bg-white pt-16">
       {/* Header with back button */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-dark/10">
         <div className="max-w-4xl mx-auto  py-6">
           <button
             onClick={() => navigate("/")}
-            className="font-mono text-xs text-[#4a9eff] hover:text-white transition-colors mb-6"
+            className="font-mono text-xs text-[#4a9eff] hover:text-dark transition-colors mb-6"
           >
             ← BACK TO SHOP
           </button>
@@ -164,7 +164,7 @@ export default function ProductDetail() {
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           {/* Left: Image/Visual */}
           <div className="flex items-center justify-center">
-            <div className="w-full h-96 bg-smoke border border-white/10 relative overflow-hidden group rounded-lg">
+            <div className="w-full h-96 bg-white border border-dark/10 relative overflow-hidden group rounded-lg">
               {product.image ? (
                 <img
                   src={product.image}
@@ -202,14 +202,14 @@ export default function ProductDetail() {
                 {product.tag}
               </span>
               {product.badge && (
-                <span className="text-xs font-mono px-2 py-0.5 bg-[#4a9eff] text-ink">
+                <span className="text-xs font-mono px-2 py-0.5 bg-[#4a9eff] text-dark">
                   {product.badge}
                 </span>
               )}
             </div>
 
             {/* Title */}
-            <h1 className="font-display text-3xl lg:text-4xl text-white leading-tight tracking-wider mb-6">
+            <h1 className="font-display text-3xl lg:text-4xl text-dark leading-tight tracking-wider mb-6">
               {product.title}
             </h1>
 
@@ -224,9 +224,9 @@ export default function ProductDetail() {
         </div>
 
         {/* Description Section */}
-        <div className="border-t border-white/10 pt-12">
+        <div className="border-t border-dark/10 pt-12">
           <div className="mb-8">
-            <span className="inline-block text-xs font-mono px-3 py-1 bg-white/5 border border-white/10 text-mist rounded">
+            <span className="inline-block text-xs font-mono px-3 py-1 bg-dark/5 border border-dark/10 text-mist rounded">
               DESCRIPTION
             </span>
           </div>
@@ -240,7 +240,7 @@ export default function ProductDetail() {
           {isLongDescription && (
             <button
               onClick={() => setShowFullDescription(!showFullDescription)}
-              className="font-mono text-xs text-[#4a9eff] hover:text-white transition-colors mt-4 underline"
+              className="font-mono text-xs text-[#4a9eff] hover:text-dark transition-colors mt-4 underline"
             >
               {showFullDescription ? "VIEW LESS ↑" : "VIEW MORE ↓"}
             </button>
@@ -276,7 +276,7 @@ export default function ProductDetail() {
             ) : (
               <button
                 onClick={() => setEmailPrompt(true)}
-                className="bg-[#4a9eff] text-ink font-mono font-semibold tracking-widest uppercase px-8 py-3 hover:bg-white transition-colors duration-200 active:scale-95 rounded"
+                className="bg-[#4a9eff] text-dark font-mono font-semibold tracking-widest uppercase px-8 py-3 hover:bg-dark hover:text-white transition-colors duration-200 active:scale-95 rounded"
               >
                 Pay now →
               </button>
@@ -287,8 +287,8 @@ export default function ProductDetail() {
 
       {/* Checkout modal overlay */}
       {emailPrompt && (
-        <div className="fixed inset-0 bg-ink/95 backdrop-blur-sm flex items-center justify-center z-50 p-6 pt-24">
-          <div className="bg-smoke border border-white/10 p-8 max-w-md w-full rounded animate-fade-in">
+        <div className="fixed inset-0 bg-white/95 backdrop-blur-sm flex items-center justify-center z-50 p-6 pt-24">
+          <div className="bg-ash border border-dark/10 p-8 max-w-md w-full rounded animate-fade-in text-dark">
             <p className="font-mono text-xs text-mist uppercase tracking-widest mb-6">
               Complete Your Info
             </p>
@@ -297,21 +297,21 @@ export default function ProductDetail() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Full Name"
-              className="bg-ink border border-white/20 focus:border-[#4a9eff] outline-none px-4 py-3 font-mono text-sm text-white placeholder:text-mist/50 mb-3 w-full transition-colors"
+              className="bg-white border border-dark/20 focus:border-[#4a9eff] outline-none px-4 py-3 font-mono text-sm text-dark placeholder:text-mist/50 mb-3 w-full transition-colors"
             />
             <input
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Phone Number"
-              className="bg-ink border border-white/20 focus:border-[#4a9eff] outline-none px-4 py-3 font-mono text-sm text-white placeholder:text-mist/50 mb-3 w-full transition-colors"
+              className="bg-white border border-dark/20 focus:border-[#4a9eff] outline-none px-4 py-3 font-mono text-sm text-dark placeholder:text-mist/50 mb-3 w-full transition-colors"
             />
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="bg-ink border border-white/20 focus:border-[#4a9eff] outline-none px-4 py-3 font-mono text-sm text-white placeholder:text-mist/50 mb-3 w-full transition-colors"
+              className="bg-white border border-dark/20 focus:border-[#4a9eff] outline-none px-4 py-3 font-mono text-sm text-dark placeholder:text-mist/50 mb-3 w-full transition-colors"
               onKeyDown={(e) => e.key === "Enter" && handleCheckout()}
             />
             {error && (
@@ -323,13 +323,13 @@ export default function ProductDetail() {
                   setEmailPrompt(false);
                   setError("");
                 }}
-                className="flex-1 bg-smoke border border-white/20 text-white font-mono text-xs font-semibold uppercase tracking-widest py-3 hover:bg-white/10 transition-colors"
+                className="flex-1 bg-ash border border-dark/20 text-dark font-mono text-xs font-semibold uppercase tracking-widest py-3 hover:bg-dark/10 transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleCheckout}
-                className="flex-1 bg-[#4a9eff] text-ink font-mono text-xs font-semibold uppercase tracking-widest py-3 hover:bg-white transition-colors"
+                className="flex-1 bg-[#4a9eff] text-dark font-mono text-xs font-semibold uppercase tracking-widest py-3 hover:bg-dark hover:text-white transition-colors"
               >
                 Continue →
               </button>

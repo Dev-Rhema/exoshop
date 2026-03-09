@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-ink pt-16">
       {/* Hero */}
-      <section className="relative border-b border-white/10 overflow-hidden">
+      <section className="relative border-b border-dark/10 overflow-hidden">
         {/* Noise texture overlay */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -23,7 +23,7 @@ export default function Home() {
                   Profitable Ads For Businesses
                 </span>
               </div>
-              <h1 className="font-display text-[clamp(4rem,12vw,9rem)] text-white leading-none tracking-wider">
+              <h1 className="font-display text-[clamp(4rem,12vw,9rem)] text-dark leading-none tracking-wider">
                 LEARN ADS.
                 <br />
                 <span className="text-[#4a9eff]">RUN CAMPAIGNS.</span>
@@ -71,10 +71,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex items-center justify-between mb-10">
           <div className="flex items-center gap-4">
-            <h2 className="font-display text-xl text-white tracking-widest uppercase">
+            <h2 className="font-display text-xl text-dark tracking-widest uppercase">
               All Products
             </h2>
-            <span className="font-mono text-xs text-mist bg-smoke border border-white/10 px-2 py-0.5">
+            <span className="font-mono text-xs text-mist bg-smoke border border-dark/10 px-2 py-0.5">
               {products.length} items
             </span>
           </div>
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-dark/5">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -92,10 +92,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 mt-8">
+      <footer className="border-t border-dark/10 mt-8">
         <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="font-display text-base tracking-wider text-white">
+            <span className="font-display text-base tracking-wider text-dark">
               EXODIGITAL
             </span>
           </div>

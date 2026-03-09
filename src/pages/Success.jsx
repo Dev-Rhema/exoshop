@@ -18,6 +18,7 @@ export default function Success() {
   const [product, setProduct] = useState(null);
   const [errorMsg, setErrorMsg] = useState("");
   const [transactionData, setTransactionData] = useState(null);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   useEffect(() => {
     if (!reference) {
@@ -82,8 +83,34 @@ export default function Success() {
     verifyPayment();
   }, [reference]);
 
+  const handleDownload = async (e, fileUrl) => {
+    e.preventDefault();
+    if (isDownloading) return;
+    setIsDownloading(true);
+
+    try {
+      const response = await fetch(fileUrl);
+      if (!response.ok) throw new Error("Network response was not ok");
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = fileUrl.split("/").pop() || "download";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Download failed:", err);
+      window.open(fileUrl, "_blank"); // Fallback
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-ink pt-16 flex items-center justify-center px-6">
+    <main className="min-h-screen bg-white pt-16 flex items-center justify-center px-6">
       <div className="w-full max-w-2xl">
         {/* Loading state */}
         {status === STATUS.LOADING && (
@@ -94,7 +121,7 @@ export default function Success() {
                 <div className="absolute inset-0 border-2 border-transparent border-t-[#4a9eff] rounded-full animate-spin" />
               </div>
               <div>
-                <p className="font-display text-2xl text-white tracking-widest mb-2">
+                <p className="font-display text-2xl text-dark tracking-widest mb-2">
                   VERIFYING PAYMENT
                 </p>
                 <p className="font-mono text-xs text-mist">
@@ -102,9 +129,9 @@ export default function Success() {
                 </p>
               </div>
               {reference && (
-                <div className="bg-smoke border border-white/10 px-4 py-2">
+                <div className="bg-ash border border-dark/10 px-4 py-2">
                   <p className="font-mono text-xs text-mist">
-                    REF: <span className="text-white/70">{reference}</span>
+                    REF: <span className="text-dark/70">{reference}</span>
                   </p>
                 </div>
               )}
@@ -119,17 +146,17 @@ export default function Success() {
               <div className="flex items-start gap-4">
                 <div className="text-red-400 text-2xl mt-0.5">✕</div>
                 <div>
-                  <h2 className="font-display text-3xl text-white tracking-wide mb-3">
+                  <h2 className="font-display text-3xl text-dark tracking-wide mb-3">
                     VERIFICATION FAILED
                   </h2>
                   <p className="font-body text-sm text-mist leading-relaxed mb-4">
                     {errorMsg}
                   </p>
                   {reference && (
-                    <div className="bg-smoke border border-white/10 px-4 py-2 mb-4">
+                    <div className="bg-ash border border-dark/10 px-4 py-2 mb-4">
                       <p className="font-mono text-xs text-mist break-all">
                         Your reference:{" "}
-                        <span className="text-white">{reference}</span>
+                        <span className="text-dark">{reference}</span>
                       </p>
                     </div>
                   )}
@@ -143,7 +170,7 @@ export default function Success() {
             </div>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 font-mono text-xs text-[#4a9eff] hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 font-mono text-xs text-[#4a9eff] hover:text-dark transition-colors"
             >
               ← Back to store
             </Link>
@@ -158,7 +185,7 @@ export default function Success() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-[#4a9eff] flex items-center justify-center">
                   <svg
-                    className="w-4 h-4 text-ink"
+                    className="w-4 h-4 text-white"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2.5"
@@ -175,7 +202,7 @@ export default function Success() {
                   Payment Confirmed
                 </span>
               </div>
-              <h1 className="font-display text-[clamp(3rem,8vw,6rem)] text-white leading-none tracking-wide">
+              <h1 className="font-display text-[clamp(3rem,8vw,6rem)] text-dark leading-none tracking-wide">
                 YOU'RE
                 <br />
                 <span className="text-[#4a9eff]">ALL SET.</span>
@@ -183,14 +210,14 @@ export default function Success() {
             </div>
 
             {/* Product card */}
-            <div className="bg-smoke border border-[#4a9eff]/30 p-6 mb-6 relative overflow-hidden">
+            <div className="bg-ash border border-[#4a9eff]/30 p-6 mb-6 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-px bg-[#4a9eff]" />
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
                   <p className="font-mono text-xs text-mist mb-1">
                     You purchased
                   </p>
-                  <h2 className="font-display text-2xl text-white tracking-wide">
+                  <h2 className="font-display text-2xl text-dark tracking-wide">
                     {product.title.toUpperCase()}
                   </h2>
                 </div>
@@ -211,11 +238,12 @@ export default function Success() {
               <a
                 href={product.file}
                 download
-                className="group flex items-center justify-between w-full bg-[#4a9eff] text-ink px-6 py-5 hover:bg-white transition-colors duration-200 mb-6"
+                onClick={(e) => handleDownload(e, product.file)}
+                className={`group flex items-center justify-between w-full bg-[#4a9eff] text-dark px-6 py-5 transition-colors duration-200 mb-6 ${isDownloading ? "opacity-80 cursor-wait" : "hover:bg-dark hover:text-white"}`}
               >
                 <div>
                   <p className="font-display text-2xl tracking-widest">
-                    DOWNLOAD NOW
+                    {isDownloading ? "DOWNLOADING..." : "DOWNLOAD NOW"}
                   </p>
                   <p className="font-mono text-xs opacity-60 truncate max-w-xs">
                     {product.file.split("/").pop()}
@@ -240,7 +268,7 @@ export default function Success() {
                 href={product.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between w-full bg-[#4a9eff] text-ink px-6 py-5 hover:bg-white transition-colors duration-200 mb-6"
+                className="group flex items-center justify-between w-full bg-[#4a9eff] text-dark px-6 py-5 hover:bg-dark hover:text-white transition-colors duration-200 mb-6"
               >
                 <div>
                   <p className="font-display text-2xl tracking-widest">
@@ -268,10 +296,10 @@ export default function Success() {
 
             {/* Reference */}
             {reference && (
-              <div className="bg-smoke border border-white/10 px-4 py-3 mb-6">
+              <div className="bg-ash border border-dark/10 px-4 py-3 mb-6">
                 <p className="font-mono text-xs text-mist">
                   Transaction reference:{" "}
-                  <span className="text-white/70 break-all">{reference}</span>
+                  <span className="text-dark/70 break-all">{reference}</span>
                 </p>
               </div>
             )}
