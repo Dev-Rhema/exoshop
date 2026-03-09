@@ -35,6 +35,9 @@ export function initiatePaystackCheckout({
     amount: product.price * 100, // Paystack uses kobo
     currency: "NGN",
     ref: `DIGI_${product.id}_${Date.now()}`,
+    name: "EXODIGITAL",
+    description: product.title,
+    image: "/productImgs/exodigital-logo.png",
     metadata: {
       product: product.id,
       product_title: product.title,
