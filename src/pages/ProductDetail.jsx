@@ -100,6 +100,25 @@ export default function ProductDetail() {
     product.description && product.description.length > 500;
 
   const renderDescription = (description) => {
+    // Check if description contains HTML
+    const containsHTML = /<[^>]*>/.test(description);
+
+    if (containsHTML) {
+      // Render as HTML with safe styles for images
+      const htmlContent = description.replace(
+        /<img/g,
+        '<img style="max-width: 100%; height: auto; margin: 20px 0; border-radius: 8px;"'
+      );
+
+      return (
+        <div
+          className="prose prose-invert max-w-none text-mist leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+      );
+    }
+
+    // Original text rendering for plain text descriptions
     // Split by paragraphs first (double newlines)
     const paragraphs = description.split("\n\n");
 
