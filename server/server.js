@@ -5,11 +5,70 @@ import axios from "axios";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import crypto from "crypto";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Meta CAPI Config
+const PIXEL_ID = process.env.PIXEL_ID;
+const META_ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
+
+// Helper to hash data for Meta CAPI (SHA256)
+const hashData = (data) => {
+  if (!data) return null;
+  return crypto
+    .createHash("sha256")
+    .update(data.trim().toLowerCase())
+    .digest("hex");
+};
+
+// Fire Meta CAPI Event
+const fireMetaCAPIEvent = async (eventName, userData, customData) => {
+  if (!PIXEL_ID || !META_ACCESS_TOKEN) {
+    console.warn("Meta CAPI skipped: Missing Pixel ID or Access Token");
+    return;
+  }
+
+  try {
+    const payload = {
+      data: [
+        {
+          event_name: eventName,
+          event_time: Math.floor(Date.now() / 1000),
+          action_source: "website",
+          event_id: customData.event_id,
+          user_data: {
+            em: [hashData(userData.email)],
+            ph: [hashData(userData.phone)],
+            fn: [hashData(userData.firstName)],
+            client_user_agent: userData.userAgent,
+            client_ip_address: userData.ip,
+          },
+          custom_data: {
+            value: customData.value,
+            currency: "NGN",
+            content_ids: [customData.productId],
+            content_type: "product",
+          },
+        },
+      ],
+    };
+
+    await axios.post(
+      `https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${META_ACCESS_TOKEN}`,
+      payload,
+    );
+    console.log(`Meta CAPI: ${eventName} sent successfully`);
+  } catch (error) {
+    console.error(
+      "Meta CAPI Error:",
+      error.response?.data || error.message,
+    );
+  }
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -149,6 +208,24 @@ app.post("/api/verify-payment", async (req, res) => {
         "Payment verified but email could not be sent. Proceeding with response.",
       );
     }
+
+    // Fire Meta CAPI Purchase Event
+    const names = name.split(" ");
+    fireMetaCAPIEvent(
+      "Purchase",
+      {
+        email: email,
+        phone: phone,
+        firstName: names[0],
+        userAgent: req.headers["user-agent"],
+        ip: req.ip,
+      },
+      {
+        value: transaction.amount,
+        productId: product,
+        event_id: reference,
+      },
+    );
 
     res.json({
       success: true,
