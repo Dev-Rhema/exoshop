@@ -17,6 +17,10 @@
     font-family: "DM Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 
   ::-webkit-scrollbar {
@@ -32,6 +36,13 @@
   ::selection {
     background: #4a9eff;
     color: #0a0a0a;
+  }
+
+  img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
   }
 }
 
