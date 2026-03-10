@@ -136,137 +136,143 @@ export default function ProductDetail() {
             {showFullDescription && (
               <>
                 <p className="font-body text-base text-black leading-relaxed mb-4">
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                150 ad templates across 10 industries.
-              </span>
-              <br />
-              <br />
-              Each template gives you three things:
-              <br />
-              <br />
-              <ul className="list-inside list-disc">
-                <li>
-                  A Visual Brief that tells you (or your designer) exactly what
-                  to create. What to shoot, how to arrange it, what the layout
-                  should look like. You can literally hand this to a graphic
-                  designer and say "make this."
-                </li>
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    150 ad templates across 10 industries.
+                  </span>
+                  <br />
+                  <br />
+                  Each template gives you three things:
+                  <br />
+                  <br />
+                  <ul className="list-inside list-disc">
+                    <li>
+                      A Visual Brief that tells you (or your designer) exactly
+                      what to create. What to shoot, how to arrange it, what the
+                      layout should look like. You can literally hand this to a
+                      graphic designer and say "make this."
+                    </li>
 
-                <li>
-                  Ad Copy that's already written. Not generic filler. Actual
-                  copy tailored to each industry with CTAs that drive action (DM
-                  or link in bio, because that's what works in Nigeria).
-                </li>
-                <li>
-                  A "When To Use" guide so you know which template fits which
-                  goal. Whether you're trying to sell, get leads, build trust,
-                  or launch something new.
-                </li>
-              </ul>
-              <br />
-              <span className="font-bold text-[18px]">
-                Here are the 10 industries covered:
-              </span>
-              <br />
-              <br />
-              Fashion. Interior Decor. Food & Restaurants. Tech & Gadgets.
-              Logistics. Real Estate. Coaching. Beauty & Skincare. Education &
-              Courses. Health & Fitness.
-              <br />
-              For each industry, you get:
-              <br />
-              5 Graphic templates (single image ads that stop the scroll) 5
-              Carousel templates (multi-slide ads that educate and sell) 5 Reel
-              templates (short video concepts with scripts and shot direction)
-              <br />
-              That's 15 templates per industry. 150 total.
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                Bonus: 15 Universal Hook Lines
-              </span>
-              . Opening lines you can plug into any ad in any industry to grab
-              attention in the first 2 seconds.
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                Bonus: Goal-Based Cheat Sheet
-              </span>
-              . A quick-reference guide that tells you exactly which template to
-              use based on your goal. Want sales? Use these ones. Want leads?
-              These ones. Want to go viral? These ones. Launching something?
-              Here's the 3-ad stack. <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                Here are results from business owners that have used this vault.
-              </span>
-              <br />
-              <br />
-              <img src="/productImgs/table1.jpeg" alt="" />
-              <img src="/productImgs/table2.jpeg" alt="" />
-              <img src="/productImgs/table3.jpeg" alt="" />
-              <img src="/productImgs/table4.jpeg" alt="" />
-              <img src="/productImgs/table5.jpeg" alt="" />
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">Who is this for?</span>
-              <br />
-              <br />
-              Business owners who run their own ads and are tired of guessing
-              what to post. Social media managers who need a library of proven
-              ad formats to pull from every week. Freelancers and agency owners
-              who create ads for clients and need to move fast without
-              sacrificing quality. Marketers who know copy alone doesn't cut it
-              in Nigeria. Visuals sell. This gives you the visuals.
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                Who is this NOT for?
-              </span>
-              <br />
-              <br />
-              People looking for a course or masterclass. This is not a
-              training. It's a done-for-you creative library. If you want to
-              learn theory, this isn't it. If you want to open a document, pick
-              a template, and start creating ads that actually convert today,
-              this is for you.
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                Let's talk numbers for a second.
-              </span>
-              <br />
-              <br />
-              Hiring a freelance designer to create 10 ad creatives in Lagos?
-              That's ₦50,000 minimum. And that's just the graphics. No strategy.
-              No copy. No guidance on when to use what.
-              <br />
-              <br />
-              Hiring a social media manager to plan your content for one month?
-              ₦100,000 to ₦200,000. And half the time they're guessing too.
-              <br />
-              <br />
-              Paying for a single ad creative from an agency? ₦15,000 to ₦30,000
-              per design. You'd need 5 just to test properly.
-              <br />
-              <br />
-              The Ad Vault gives you 150 templates with the strategy, copy, and
-              visual direction already done. For less than what you'd pay for
-              one single graphic from an agency.
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                ₦7,500. One time.
-              </span>{" "}
-              No monthly subscription. No upsells. One payment. 150 templates.
-              Lifetime access.
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">
-                Get The Ad Vault 2.0 now.
-              </span>
+                    <li>
+                      Ad Copy that's already written. Not generic filler. Actual
+                      copy tailored to each industry with CTAs that drive action
+                      (DM or link in bio, because that's what works in Nigeria).
+                    </li>
+                    <li>
+                      A "When To Use" guide so you know which template fits
+                      which goal. Whether you're trying to sell, get leads,
+                      build trust, or launch something new.
+                    </li>
+                  </ul>
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Here are the 10 industries covered:
+                  </span>
+                  <br />
+                  <br />
+                  Fashion. Interior Decor. Food & Restaurants. Tech & Gadgets.
+                  Logistics. Real Estate. Coaching. Beauty & Skincare. Education
+                  & Courses. Health & Fitness.
+                  <br />
+                  For each industry, you get:
+                  <br />
+                  5 Graphic templates (single image ads that stop the scroll) 5
+                  Carousel templates (multi-slide ads that educate and sell) 5
+                  Reel templates (short video concepts with scripts and shot
+                  direction)
+                  <br />
+                  That's 15 templates per industry. 150 total.
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Bonus: 15 Universal Hook Lines
+                  </span>
+                  . Opening lines you can plug into any ad in any industry to
+                  grab attention in the first 2 seconds.
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Bonus: Goal-Based Cheat Sheet
+                  </span>
+                  . A quick-reference guide that tells you exactly which
+                  template to use based on your goal. Want sales? Use these
+                  ones. Want leads? These ones. Want to go viral? These ones.
+                  Launching something? Here's the 3-ad stack. <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Here are results from business owners that have used this
+                    vault.
+                  </span>
+                  <br />
+                  <br />
+                  <img src="/productImgs/table1.jpeg" alt="" />
+                  <img src="/productImgs/table2.jpeg" alt="" />
+                  <img src="/productImgs/table3.jpeg" alt="" />
+                  <img src="/productImgs/table4.jpeg" alt="" />
+                  <img src="/productImgs/table5.jpeg" alt="" />
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Who is this for?
+                  </span>
+                  <br />
+                  <br />
+                  Business owners who run their own ads and are tired of
+                  guessing what to post. Social media managers who need a
+                  library of proven ad formats to pull from every week.
+                  Freelancers and agency owners who create ads for clients and
+                  need to move fast without sacrificing quality. Marketers who
+                  know copy alone doesn't cut it in Nigeria. Visuals sell. This
+                  gives you the visuals.
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Who is this NOT for?
+                  </span>
+                  <br />
+                  <br />
+                  People looking for a course or masterclass. This is not a
+                  training. It's a done-for-you creative library. If you want to
+                  learn theory, this isn't it. If you want to open a document,
+                  pick a template, and start creating ads that actually convert
+                  today, this is for you.
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Let's talk numbers for a second.
+                  </span>
+                  <br />
+                  <br />
+                  Hiring a freelance designer to create 10 ad creatives in
+                  Lagos? That's ₦50,000 minimum. And that's just the graphics.
+                  No strategy. No copy. No guidance on when to use what.
+                  <br />
+                  <br />
+                  Hiring a social media manager to plan your content for one
+                  month? ₦100,000 to ₦200,000. And half the time they're
+                  guessing too.
+                  <br />
+                  <br />
+                  Paying for a single ad creative from an agency? ₦15,000 to
+                  ₦30,000 per design. You'd need 5 just to test properly.
+                  <br />
+                  <br />
+                  The Ad Vault gives you 150 templates with the strategy, copy,
+                  and visual direction already done. For less than what you'd
+                  pay for one single graphic from an agency.
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    ₦7,500. One time.
+                  </span>{" "}
+                  No monthly subscription. No upsells. One payment. 150
+                  templates. Lifetime access.
+                  <br />
+                  <br />
+                  <span className="font-bold text-[18px]">
+                    Get The Ad Vault 2.0 now.
+                  </span>
                 </p>
               </>
             )}
@@ -294,103 +300,105 @@ export default function ProductDetail() {
             {showFullDescription && (
               <>
                 <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
-                <p>
-                  <br />
-                  <br />
-                  <p className="font-bold text-[18px]">
-                    Below is a review from a business owner after our ads setup
+                  <p>
+                    <br />
+                    <br />
+                    <p className="font-bold text-[18px]">
+                      Below is a review from a business owner after our ads
+                      setup
+                    </p>
+                    <br />
+                    <img src="/productImgs/ad-setup-chat.jpeg" alt="" />
+                    <br />
+                    Here's what you get:
                   </p>
+                  <p>
+                    <span className="font-bold text-[18px]">
+                      𝗣𝗮𝗿𝘁 𝟭: 𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝘆 𝗖𝗼𝗻𝘀𝘂𝗹𝘁𝗮𝘁𝗶𝗼𝗻
+                    </span>{" "}
+                    We look at your business together. What you're selling. Who
+                    you're selling to. Whether your website is ready. Whether
+                    tracking is installed. What kind of ads you need to setup.
+                    <br />
+                    Most ad failures start with skipping this step.
+                  </p>
+                  <p>
+                    <span className="font-bold text-[18px]">
+                      𝗣𝗮𝗿𝘁 𝟮: 𝗙𝘂𝗹𝗹 𝗔𝗱 𝗦𝗲𝘁𝘂𝗽
+                    </span>{" "}
+                    I build your ad account structure from scratch. Campaigns.
+                    Ad sets. Targeting. The framework you need to actually
+                    scale, not just spend.
+                  </p>
+                  <p>
+                    <span className="font-bold text-[18px]">
+                      𝗣𝗮𝗿𝘁 𝟯: 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻 𝗖𝗮𝗿𝗱
+                    </span>{" "}
+                    A personal reference showing you exactly what to monitor,
+                    when to adjust, and when to scale. So you're not guessing
+                    after I'm done.
+                  </p>
+                  <p>
+                    This is setup, not management. Once it's done, you own a
+                    system that works.
+                  </p>
+                  <br /> <br />
+                  <p className="font-bold text-[18px]">
+                    Here are some successful ads from small business owners. I
+                    set up for them and they went ahead to run successful
+                    campaigns.
+                  </p>
+                  <div className="flex flex-col gap-2">
+                    <img src="/productImgs/table1.jpeg" alt="" />
+                    <img src="/productImgs/table2.jpeg" alt="" />
+                    <img src="/productImgs/table3.jpeg" alt="" />
+                    <img src="/productImgs/table4.jpeg" alt="" />
+                    <img src="/productImgs/table5.jpeg" alt="" />
+                  </div>
+                  <p className="font-bold text-[18px]">
+                    This offer is for only one channel. <br /> Total value:
+                    ₦235,000 <br /> This month only: ₦150,000
+                  </p>{" "}
                   <br />
-                  <img src="/productImgs/ad-setup-chat.jpeg" alt="" />
+                  <span className="font-bold text-[18px]">
+                    Frequently Asked Questions
+                  </span>
+                  <div className="flex flex-col gap-2">
+                    <p>
+                      <span className="font-bold text-[18px]">
+                        "Is this for a specific platform?"
+                      </span>{" "}
+                      This covers Meta (Facebook/Instagram). If you need other
+                      platforms like Snapchat or Google, we can discuss.
+                    </p>
+                    <p>
+                      <span className="font-bold text-[18px]">
+                        "What if I don't have a website?"
+                      </span>{" "}
+                      That's exactly why we start with consultation. We'll
+                      figure out what you need before setting anything up. Some
+                      businesses don't need websites to run profitable ads.
+                    </p>
+                    <p>
+                      <span className="font-bold text-[18px]">
+                        "Do you manage the ads after?"
+                      </span>{" "}
+                      This is setup only. But after we're done, you'll have a
+                      proper foundation. Whether you run it yourself or hire
+                      someone, the structure will be solid.
+                    </p>
+                    <p>
+                      <span className="font-bold text-[18px]">
+                        "Why is it discounted?"
+                      </span>{" "}
+                      I'm building case studies and want to work with serious
+                      business owners who'll actually implement. The discount is
+                      for this month only.
+                    </p>
+                  </div>
                   <br />
-                  Here's what you get:
-                </p>
-              <p>
-                <span className="font-bold text-[18px]">
-                  𝗣𝗮𝗿𝘁 𝟭: 𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝘆 𝗖𝗼𝗻𝘀𝘂𝗹𝘁𝗮𝘁𝗶𝗼𝗻
-                </span>{" "}
-                We look at your business together. What you're selling. Who
-                you're selling to. Whether your website is ready. Whether
-                tracking is installed. What kind of ads you need to setup.
-                <br />
-                Most ad failures start with skipping this step.
-              </p>
-              <p>
-                <span className="font-bold text-[18px]">
-                  𝗣𝗮𝗿𝘁 𝟮: 𝗙𝘂𝗹𝗹 𝗔𝗱 𝗦𝗲𝘁𝘂𝗽
-                </span>{" "}
-                I build your ad account structure from scratch. Campaigns. Ad
-                sets. Targeting. The framework you need to actually scale, not
-                just spend.
-              </p>
-              <p>
-                <span className="font-bold text-[18px]">
-                  𝗣𝗮𝗿𝘁 𝟯: 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻 𝗖𝗮𝗿𝗱
-                </span>{" "}
-                A personal reference showing you exactly what to monitor, when
-                to adjust, and when to scale. So you're not guessing after I'm
-                done.
-              </p>
-              <p>
-                This is setup, not management. Once it's done, you own a system
-                that works.
-              </p>
-              <br /> <br />
-              <p className="font-bold text-[18px]">
-                Here are some successful ads from small business owners. I set
-                up for them and they went ahead to run successful campaigns.
-              </p>
-              <div className="flex flex-col gap-2">
-                <img src="/productImgs/table1.jpeg" alt="" />
-                <img src="/productImgs/table2.jpeg" alt="" />
-                <img src="/productImgs/table3.jpeg" alt="" />
-                <img src="/productImgs/table4.jpeg" alt="" />
-                <img src="/productImgs/table5.jpeg" alt="" />
-              </div>
-              <p className="font-bold text-[18px]">
-                This offer is for only one channel. <br /> Total value: ₦235,000{" "}
-                <br /> This month only: ₦150,000
-              </p>{" "}
-              <br />
-              <span className="font-bold text-[18px]">
-                Frequently Asked Questions
-              </span>
-              <div className="flex flex-col gap-2">
-                <p>
-                  <span className="font-bold text-[18px]">
-                    "Is this for a specific platform?"
-                  </span>{" "}
-                  This covers Meta (Facebook/Instagram). If you need other
-                  platforms like Snapchat or Google, we can discuss.
-                </p>
-                <p>
-                  <span className="font-bold text-[18px]">
-                    "What if I don't have a website?"
-                  </span>{" "}
-                  That's exactly why we start with consultation. We'll figure
-                  out what you need before setting anything up. Some businesses
-                  don't need websites to run profitable ads.
-                </p>
-                <p>
-                  <span className="font-bold text-[18px]">
-                    "Do you manage the ads after?"
-                  </span>{" "}
-                  This is setup only. But after we're done, you'll have a proper
-                  foundation. Whether you run it yourself or hire someone, the
-                  structure will be solid.
-                </p>
-                <p>
-                  <span className="font-bold text-[18px]">
-                    "Why is it discounted?"
-                  </span>{" "}
-                  I'm building case studies and want to work with serious
-                  business owners who'll actually implement. The discount is for
-                  this month only.
-                </p>
-              </div>
-              <br />
-              <br />
-              <span className="font-bold text-[18px]">BOOK NOW</span>
+                  <br />
+                  <span className="font-bold text-[18px]">BOOK NOW</span>
                 </p>
               </>
             )}
@@ -418,72 +426,75 @@ export default function ProductDetail() {
             {showFullDescription && (
               <>
                 <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
-              <p>
-                <span className="font-bold">The challenge:</span> Rising ad
-                costs on Facebook, Instagram, and Google with decreasing
-                performance. TikTok ads are also very difficult to control, with
-                limited to no sales.
-              </p>
-              <p>
-                <span className="font-bold">The opportunity:</span> 20 million
-                Nigerians actively use Snapchat daily, creating a first-mover
-                advantage in an untapped market with lower competition and
-                higher engagement potential.
-              </p>
-              <span className="font-bold">What You Get:</span>
-              <p>
-                This 2-hour replay masterclass shows you exactly how to run
-                profitable Snapchat ads in Nigeria. No story. No theory. Just
-                practical steps that work.
-              </p>
-              <span className="font-bold">You'll discover:</span>
-              <ul className="list-disc list-inside">
-                <li>
-                  Why Snapchat users buy 5x more than Facebook users, and how to
-                  reach them
-                </li>
-                <li>
-                  The exact ad formats crushing it for Nigerian businesses right
-                  now
-                </li>
-                <li>Step-by-step campaign setup (watch me build one live)</li>
-                <li>Payment workarounds for Nigerian ad accounts</li>
-              </ul>
-              <span className="font-bold">Who This Is For:</span>
-              <ul className="list-disc list-inside">
-                <li>Business owners tired of wasting money on ads</li>
-                <li>Marketers who want to beat the competition</li>
-                <li>Anyone selling to Nigerians aged 18-35</li>
-                <li>People who've failed on other platforms</li>
-              </ul>
-              <span className="font-bold">The Facts:</span>
-              <ul className="list-disc list-inside">
-                <li>95% of Snapchat users aren't on TikTok daily</li>
-                <li>47% aren't on Meta daily</li>
-                <li>They open the app 30+ times per day</li>
-                <li>This means more reach on average for your business</li>
-              </ul>
-              <span className="font-bold">What Makes This Different:</span>
-              <p>
-                This isn't another generic class. Everything is tailored just
-                for you.
-                <br />
-                I'll show you the live Ads Manager on screen. You'll see exactly
-                where to click, what to type, and how to launch your first
-                campaign before we finish.
-                <br />
-                Your competitors aren't on Snapchat yet. When they finally wake
-                up, you'll already own the platform.
-              </p>
-              <span className="font-bold">Price: ₦22,500 only.</span>
-              <p>
-                Have lifetime access to the replay to watch whenever you want.
-              </p>
-              <p>
-                Stop burning money on saturated platforms. Get in early on
-                Snapchat while it's still cheap and wide open.
-              </p>
-              <p>Secure your Spot today.</p>
+                  <p>
+                    <span className="font-bold">The challenge:</span> Rising ad
+                    costs on Facebook, Instagram, and Google with decreasing
+                    performance. TikTok ads are also very difficult to control,
+                    with limited to no sales.
+                  </p>
+                  <p>
+                    <span className="font-bold">The opportunity:</span> 20
+                    million Nigerians actively use Snapchat daily, creating a
+                    first-mover advantage in an untapped market with lower
+                    competition and higher engagement potential.
+                  </p>
+                  <span className="font-bold">What You Get:</span>
+                  <p>
+                    This 2-hour replay masterclass shows you exactly how to run
+                    profitable Snapchat ads in Nigeria. No story. No theory.
+                    Just practical steps that work.
+                  </p>
+                  <span className="font-bold">You'll discover:</span>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Why Snapchat users buy 5x more than Facebook users, and
+                      how to reach them
+                    </li>
+                    <li>
+                      The exact ad formats crushing it for Nigerian businesses
+                      right now
+                    </li>
+                    <li>
+                      Step-by-step campaign setup (watch me build one live)
+                    </li>
+                    <li>Payment workarounds for Nigerian ad accounts</li>
+                  </ul>
+                  <span className="font-bold">Who This Is For:</span>
+                  <ul className="list-disc list-inside">
+                    <li>Business owners tired of wasting money on ads</li>
+                    <li>Marketers who want to beat the competition</li>
+                    <li>Anyone selling to Nigerians aged 18-35</li>
+                    <li>People who've failed on other platforms</li>
+                  </ul>
+                  <span className="font-bold">The Facts:</span>
+                  <ul className="list-disc list-inside">
+                    <li>95% of Snapchat users aren't on TikTok daily</li>
+                    <li>47% aren't on Meta daily</li>
+                    <li>They open the app 30+ times per day</li>
+                    <li>This means more reach on average for your business</li>
+                  </ul>
+                  <span className="font-bold">What Makes This Different:</span>
+                  <p>
+                    This isn't another generic class. Everything is tailored
+                    just for you.
+                    <br />
+                    I'll show you the live Ads Manager on screen. You'll see
+                    exactly where to click, what to type, and how to launch your
+                    first campaign before we finish.
+                    <br />
+                    Your competitors aren't on Snapchat yet. When they finally
+                    wake up, you'll already own the platform.
+                  </p>
+                  <span className="font-bold">Price: ₦22,500 only.</span>
+                  <p>
+                    Have lifetime access to the replay to watch whenever you
+                    want.
+                  </p>
+                  <p>
+                    Stop burning money on saturated platforms. Get in early on
+                    Snapchat while it's still cheap and wide open.
+                  </p>
+                  <p>Secure your Spot today.</p>
                 </p>
               </>
             )}
@@ -509,84 +520,88 @@ export default function ProductDetail() {
             {showFullDescription && (
               <>
                 <p className="font-body text-base flex flex-col gap-2 text-black leading-relaxed mb-4">
-              <p className="font-bold text-[18px]">
-                Stop Guessing. Start Selling.
-              </p>
-              <p>
-                Most marketers throw money at random locations. This is a
-                mistake. Use these specific spots instead:
-              </p>
-              <ul className="list-disc list-inside">
-                <li>
-                  <span className="font-bold text-[18px]">Lagos:</span> Reach
-                  billionaires on{" "}
-                  <span className="font-bold text-[18px]">Banana Island</span>{" "}
-                  for yacht rentals and high-end real estate.
-                </li>
-                <li>
-                  <span className="font-bold text-[18px]">Abuja:</span> Target
-                  ministers and CEOs in{" "}
-                  <span className="font-bold text-[18px]">Maitama.</span>
-                </li>
-                <li>
-                  <span className="font-bold text-[18px]">Port Harcourt:</span>{" "}
-                  Find oil executives and expats in{" "}
-                  <span className="font-bold text-[18px]">GRA.</span>
-                </li>
-                <li>
-                  <span className="font-bold text-[18px]">Anambra:</span> Reach
-                  millionaire traders in{" "}
-                  <span className="font-bold text-[18px]">Onitsha</span> and
-                  industrialists in{" "}
-                  <span className="font-bold text-[18px]">Nnewi.</span>
-                </li>
-                <li>And many more</li>
-              </ul>
-              <p className="font-bold text-[18px]">Understand the Habit</p>
-              <p>
-                Knowing the place is only half the battle. Wealthy people have
-                specific habits.
-              </p>
-              <p>
-                An executive in{" "}
-                <span className="font-bold text-[18px]">Asokoro</span> is awake
-                and drinking coffee by 6 AM. A tech innovator in{" "}
-                <span className="font-bold text-[18px]">Yaba</span> stays up
-                until midnight. You must speak their language.
-              </p>
-              <p>
-                Use Instagram for the trendy Lagos elite. Use community radio
-                for business owners in{" "}
-                <span className="font-bold text-[18px]">Ekwulobia</span>.
-                Context determines your success.
-              </p>
-              <p className="font-bold text-[18px]">The Details</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  <span className="font-bold text-[18px]">Price: </span> 5,000
-                  Naira.
-                </li>
-                <li>
-                  <span className="font-bold text-[18px]">Content: </span>{" "}
-                  Detailed breakdowns of neighborhoods, business districts, and
-                  leisure spots.
-                </li>
-                <li>
-                  <span className="font-bold text-[18px]">
-                    States Covered:{" "}
-                  </span>{" "}
-                  Lagos, Abuja, Rivers, Oyo, Anambra, Imo, Bayelsa, Akwa Ibom,
-                  Delta, and Ondo.
-                </li>
-              </ul>
-              <p>
-                Fortune favors the bold. Stop overthinking. Your next big sale
-                is waiting in one of these 10 states.
-              </p>
-              <p className="font-bold text-[18px]">
-                {" "}
-                Get your copy for 5,000 Naira now.
-              </p>
+                  <p className="font-bold text-[18px]">
+                    Stop Guessing. Start Selling.
+                  </p>
+                  <p>
+                    Most marketers throw money at random locations. This is a
+                    mistake. Use these specific spots instead:
+                  </p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      <span className="font-bold text-[18px]">Lagos:</span>{" "}
+                      Reach billionaires on{" "}
+                      <span className="font-bold text-[18px]">
+                        Banana Island
+                      </span>{" "}
+                      for yacht rentals and high-end real estate.
+                    </li>
+                    <li>
+                      <span className="font-bold text-[18px]">Abuja:</span>{" "}
+                      Target ministers and CEOs in{" "}
+                      <span className="font-bold text-[18px]">Maitama.</span>
+                    </li>
+                    <li>
+                      <span className="font-bold text-[18px]">
+                        Port Harcourt:
+                      </span>{" "}
+                      Find oil executives and expats in{" "}
+                      <span className="font-bold text-[18px]">GRA.</span>
+                    </li>
+                    <li>
+                      <span className="font-bold text-[18px]">Anambra:</span>{" "}
+                      Reach millionaire traders in{" "}
+                      <span className="font-bold text-[18px]">Onitsha</span> and
+                      industrialists in{" "}
+                      <span className="font-bold text-[18px]">Nnewi.</span>
+                    </li>
+                    <li>And many more</li>
+                  </ul>
+                  <p className="font-bold text-[18px]">Understand the Habit</p>
+                  <p>
+                    Knowing the place is only half the battle. Wealthy people
+                    have specific habits.
+                  </p>
+                  <p>
+                    An executive in{" "}
+                    <span className="font-bold text-[18px]">Asokoro</span> is
+                    awake and drinking coffee by 6 AM. A tech innovator in{" "}
+                    <span className="font-bold text-[18px]">Yaba</span> stays up
+                    until midnight. You must speak their language.
+                  </p>
+                  <p>
+                    Use Instagram for the trendy Lagos elite. Use community
+                    radio for business owners in{" "}
+                    <span className="font-bold text-[18px]">Ekwulobia</span>.
+                    Context determines your success.
+                  </p>
+                  <p className="font-bold text-[18px]">The Details</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      <span className="font-bold text-[18px]">Price: </span>{" "}
+                      5,000 Naira.
+                    </li>
+                    <li>
+                      <span className="font-bold text-[18px]">Content: </span>{" "}
+                      Detailed breakdowns of neighborhoods, business districts,
+                      and leisure spots.
+                    </li>
+                    <li>
+                      <span className="font-bold text-[18px]">
+                        States Covered:{" "}
+                      </span>{" "}
+                      Lagos, Abuja, Rivers, Oyo, Anambra, Imo, Bayelsa, Akwa
+                      Ibom, Delta, and Ondo.
+                    </li>
+                  </ul>
+                  <p>
+                    Fortune favors the bold. Stop overthinking. Your next big
+                    sale is waiting in one of these 10 states.
+                  </p>
+                  <p className="font-bold text-[18px]">
+                    {" "}
+                    Get your copy for 5,000 Naira now.
+                  </p>
                 </p>
               </>
             )}
@@ -718,55 +733,66 @@ export default function ProductDetail() {
             {showFullDescription && (
               <>
                 <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
-              <p>
-                Struggling to scale your business through effective marketing?
-                Get actionable insights from a growth expert who has:
-              </p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Generated over 1M+ users for PiggyVest through strategic
-                  campaigns
-                </li>
-                <li>Managed £1M+ in ad spend optimization for TransferGO</li>
-                <li>Achieved 500% user base growth for fintech products</li>
-                <li>
-                  Driven 70% user acquisition growth across global markets
-                </li>
-                <li>
-                  Worked with over 30 brands and drove insane results for them.
-                </li>
-              </ul>
-              <p className="font-bold">
-                In this 1-hour power session, you'll get:
-              </p>
-              <ul className="list-disc list-inside">
-                <li>A deep dive analysis of your current marketing strategy</li>
-                <li>Identification of quick wins and growth opportunities</li>
-                <li>
-                  Custom-tailored recommendations for your specific market
-                </li>
-                <li>Data-driven insights to optimize your marketing spend</li>
-                <li>
-                  Clear, actionable steps to improve your conversion rates
-                </li>
-              </ul>
-              <p className="font-bold">Perfect for:</p>
-              <ul className="list-disc list-inside">
-                <li>Startup founders looking to scale</li>
-                <li>Marketing managers seeking fresh strategies</li>
-                <li>
-                  Business owners wanting to optimize their digital presence
-                </li>
-                <li>Teams stuck in their growth journey</li>
-              </ul>
-              <p>
-                <span className="font-bold">Bonus: </span>Receive a summary
-                report of key recommendations after our session.
-              </p>
-              <p>
-                Limited slots available each week. Book now to transform your
-                marketing approach and unlock your business's growth potential.
-              </p>
+                  <p>
+                    Struggling to scale your business through effective
+                    marketing? Get actionable insights from a growth expert who
+                    has:
+                  </p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Generated over 1M+ users for PiggyVest through strategic
+                      campaigns
+                    </li>
+                    <li>
+                      Managed £1M+ in ad spend optimization for TransferGO
+                    </li>
+                    <li>Achieved 500% user base growth for fintech products</li>
+                    <li>
+                      Driven 70% user acquisition growth across global markets
+                    </li>
+                    <li>
+                      Worked with over 30 brands and drove insane results for
+                      them.
+                    </li>
+                  </ul>
+                  <p className="font-bold">
+                    In this 1-hour power session, you'll get:
+                  </p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      A deep dive analysis of your current marketing strategy
+                    </li>
+                    <li>
+                      Identification of quick wins and growth opportunities
+                    </li>
+                    <li>
+                      Custom-tailored recommendations for your specific market
+                    </li>
+                    <li>
+                      Data-driven insights to optimize your marketing spend
+                    </li>
+                    <li>
+                      Clear, actionable steps to improve your conversion rates
+                    </li>
+                  </ul>
+                  <p className="font-bold">Perfect for:</p>
+                  <ul className="list-disc list-inside">
+                    <li>Startup founders looking to scale</li>
+                    <li>Marketing managers seeking fresh strategies</li>
+                    <li>
+                      Business owners wanting to optimize their digital presence
+                    </li>
+                    <li>Teams stuck in their growth journey</li>
+                  </ul>
+                  <p>
+                    <span className="font-bold">Bonus: </span>Receive a summary
+                    report of key recommendations after our session.
+                  </p>
+                  <p>
+                    Limited slots available each week. Book now to transform
+                    your marketing approach and unlock your business's growth
+                    potential.
+                  </p>
                 </p>
               </>
             )}
@@ -791,70 +817,74 @@ export default function ProductDetail() {
             {showFullDescription && (
               <>
                 <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
-              <p className="font-bold">E-commerce Business Owners</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Perfect for those selling physical products like bags, shoes,
-                  and apparel
-                </li>
-                <li>
-                  Learn proven frameworks to convert "interested" prospects into
-                  repeat buyers
-                </li>
-                <li>
-                  Eliminate the "just looking" syndrome and drive actual sales
-                </li>
-              </ul>
-              <p className="font-bold">Service-Based Professionals</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Tailored for makeup artists, interior decorators, plumbers,
-                  painters, and similar service providers
-                </li>
-                <li>Convert inquiries into booked appointments</li>
-                <li>Transform interest into immediate action</li>
-              </ul>
-              <p className="font-bold">
-                Freelancers, Creators & Marketing Pros
-              </p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Specifically designed for designers, editors, and marketing
-                  professionals
-                </li>
-                <li>
-                  Includes specialized closing frameworks for the gig economy
-                </li>
-                <li>
-                  Learn how to handle price negotiations and close high-ticket
-                  deals.
-                </li>
-              </ul>
-              <p className="font-bold">✨ What Makes This Different:</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Based on analysis of over 20 different business DMs across
-                  industries
-                </li>
-                <li>Custom-tailored approaches for each business type</li>
-                <li>Proven conversion strategies from real-world experience</li>
-                <li>No waitlist - immediate access.</li>
-              </ul>
-              <p>
-                <span className="font-bold text-[18px]">
-                  Value Proposition:
-                </span>{" "}
-                This isn't just another generic sales guide. It's a
-                comprehensive framework built from analyzing actual client
-                conversations and sales patterns, designed to help you
-                understand why sales aren't closing and how to fix it.
-              </p>
-              <p>
-                <span className="font-bold text-[18px]">Perfect For:</span>{" "}
-                Business owners who are tired of tire-kickers and want to
-                convert serious prospects into paying clients.
-              </p>
-              <p className="font-bold text-2xl">Get Your Copy Today.</p>
+                  <p className="font-bold">E-commerce Business Owners</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Perfect for those selling physical products like bags,
+                      shoes, and apparel
+                    </li>
+                    <li>
+                      Learn proven frameworks to convert "interested" prospects
+                      into repeat buyers
+                    </li>
+                    <li>
+                      Eliminate the "just looking" syndrome and drive actual
+                      sales
+                    </li>
+                  </ul>
+                  <p className="font-bold">Service-Based Professionals</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Tailored for makeup artists, interior decorators,
+                      plumbers, painters, and similar service providers
+                    </li>
+                    <li>Convert inquiries into booked appointments</li>
+                    <li>Transform interest into immediate action</li>
+                  </ul>
+                  <p className="font-bold">
+                    Freelancers, Creators & Marketing Pros
+                  </p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Specifically designed for designers, editors, and
+                      marketing professionals
+                    </li>
+                    <li>
+                      Includes specialized closing frameworks for the gig
+                      economy
+                    </li>
+                    <li>
+                      Learn how to handle price negotiations and close
+                      high-ticket deals.
+                    </li>
+                  </ul>
+                  <p className="font-bold">✨ What Makes This Different:</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Based on analysis of over 20 different business DMs across
+                      industries
+                    </li>
+                    <li>Custom-tailored approaches for each business type</li>
+                    <li>
+                      Proven conversion strategies from real-world experience
+                    </li>
+                    <li>No waitlist - immediate access.</li>
+                  </ul>
+                  <p>
+                    <span className="font-bold text-[18px]">
+                      Value Proposition:
+                    </span>{" "}
+                    This isn't just another generic sales guide. It's a
+                    comprehensive framework built from analyzing actual client
+                    conversations and sales patterns, designed to help you
+                    understand why sales aren't closing and how to fix it.
+                  </p>
+                  <p>
+                    <span className="font-bold text-[18px]">Perfect For:</span>{" "}
+                    Business owners who are tired of tire-kickers and want to
+                    convert serious prospects into paying clients.
+                  </p>
+                  <p className="font-bold text-2xl">Get Your Copy Today.</p>
                 </p>
               </>
             )}
