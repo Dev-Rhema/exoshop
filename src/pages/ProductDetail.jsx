@@ -108,7 +108,10 @@ export default function ProductDetail() {
       email,
       onSuccess: (response) => {
         setLoading(false);
-        if (response.status === "success") {
+        console.log("[Paystack Success Callback]", response);
+        
+        // Final guard: Only fire Purchase if status is explicitly 'success'
+        if (response && response.status === "success") {
           trackPurchase(
             product.id,
             product.title,
@@ -116,6 +119,7 @@ export default function ProductDetail() {
             response.reference,
           );
         }
+        
         navigate(`/success?reference=${response.reference}`);
       },
       onClose: () => {

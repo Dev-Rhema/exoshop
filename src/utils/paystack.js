@@ -56,7 +56,12 @@ export function initiatePaystackCheckout({
         },
       ],
     },
+    onOpen: () => {
+      // Modal opened
+    },
     callback: function (response) {
+      // Paystack callback is traditionally only successful transactions in Inline
+      // but we'll pass it back for the status check
       onSuccess(response);
     },
     onClose: function () {
