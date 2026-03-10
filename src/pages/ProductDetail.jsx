@@ -2,7 +2,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import products from "../data/products";
 import { useState, useEffect } from "react";
 import { initiatePaystackCheckout } from "../utils/paystack";
-import { trackViewContent, trackAddToCart } from "../utils/pixelTracking";
+import {
+  trackViewContent,
+  trackAddToCart,
+  trackInitiateCheckout,
+  trackPurchase,
+} from "../utils/pixelTracking";
 
 const TAG_COLORS = {
   EBOOK: "bg-blue-50 text-blue-700 border-blue-200",
@@ -76,8 +81,8 @@ export default function ProductDetail() {
     setEmailPrompt(false);
     setLoading(true);
 
-    // Track add to cart
-    trackAddToCart(product.id, product.title, product.price);
+    // Track checkout initiation
+    trackInitiateCheckout(product.id, product.title, product.price);
 
     // Store checkout data in localStorage for Success page
     localStorage.setItem(
@@ -96,6 +101,7 @@ export default function ProductDetail() {
       email,
       onSuccess: (reference) => {
         setLoading(false);
+        trackPurchase(product.id, product.title, product.price, reference);
         navigate(`/success?reference=${reference}`);
       },
       onClose: () => {
