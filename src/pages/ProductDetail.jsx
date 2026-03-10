@@ -131,6 +131,11 @@ export default function ProductDetail() {
               <br />
               <br />
               That's what The Ad Vault gives you.
+            </p>
+
+            {showFullDescription && (
+              <>
+                <p className="font-body text-base text-black leading-relaxed mb-4">
               <br />
               <br />
               <span className="font-bold text-[18px]">
@@ -262,7 +267,9 @@ export default function ProductDetail() {
               <span className="font-bold text-[18px]">
                 Get The Ad Vault 2.0 now.
               </span>
-            </p>
+                </p>
+              </>
+            )}
           </div>
         );
 
@@ -281,16 +288,23 @@ export default function ProductDetail() {
                 No strategy. Just "boost post and hope." That's not how it
                 works. This month, I'm opening up 10 spots for business owners
                 who want their ad setup done properly.
-                <br />
-                <br />
-                <p className="font-bold text-[18px]">
-                  Below is a review from a business owner after our ads setup
-                </p>
-                <br />
-                <img src="/productImgs/ad-setup-chat.jpeg" alt="" />
-                <br />
-                Here's what you get:
               </p>
+            </p>
+
+            {showFullDescription && (
+              <>
+                <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
+                <p>
+                  <br />
+                  <br />
+                  <p className="font-bold text-[18px]">
+                    Below is a review from a business owner after our ads setup
+                  </p>
+                  <br />
+                  <img src="/productImgs/ad-setup-chat.jpeg" alt="" />
+                  <br />
+                  Here's what you get:
+                </p>
               <p>
                 <span className="font-bold text-[18px]">
                   𝗣𝗮𝗿𝘁 𝟭: 𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝘆 𝗖𝗼𝗻𝘀𝘂𝗹𝘁𝗮𝘁𝗶𝗼𝗻
@@ -338,9 +352,9 @@ export default function ProductDetail() {
                 <br /> This month only: ₦150,000
               </p>{" "}
               <br />
-              <p className="font-bold text-[18px]">
+              <span className="font-bold text-[18px]">
                 Frequently Asked Questions
-              </p>
+              </span>
               <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-bold text-[18px]">
@@ -377,7 +391,9 @@ export default function ProductDetail() {
               <br />
               <br />
               <span className="font-bold text-[18px]">BOOK NOW</span>
-            </p>
+                </p>
+              </>
+            )}
           </div>
         );
 
@@ -397,6 +413,11 @@ export default function ProductDetail() {
                 ALL THE RESOURCES USED IN CLASS IS ATTACHED AFTER YOU GET YOUR
                 COPY.
               </p>
+            </p>
+
+            {showFullDescription && (
+              <>
+                <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
               <p>
                 <span className="font-bold">The challenge:</span> Rising ad
                 costs on Facebook, Instagram, and Google with decreasing
@@ -463,7 +484,9 @@ export default function ProductDetail() {
                 Snapchat while it's still cheap and wide open.
               </p>
               <p>Secure your Spot today.</p>
-            </p>
+                </p>
+              </>
+            )}
           </div>
         );
 
@@ -481,6 +504,11 @@ export default function ProductDetail() {
                 This book identifies the top areas in 10 Nigerian states where
                 big spenders live and work.
               </p>
+            </p>
+
+            {showFullDescription && (
+              <>
+                <p className="font-body text-base flex flex-col gap-2 text-black leading-relaxed mb-4">
               <p className="font-bold text-[18px]">
                 Stop Guessing. Start Selling.
               </p>
@@ -559,7 +587,9 @@ export default function ProductDetail() {
                 {" "}
                 Get your copy for 5,000 Naira now.
               </p>
-            </p>
+                </p>
+              </>
+            )}
           </div>
         );
 
@@ -683,6 +713,11 @@ export default function ProductDetail() {
                 Full refund if you do not get any value. There is no risk to
                 you, only gains. <br /> Book a 1:1 Clarity Session with Ebuka
               </p>
+            </p>
+
+            {showFullDescription && (
+              <>
+                <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
               <p>
                 Struggling to scale your business through effective marketing?
                 Get actionable insights from a growth expert who has:
@@ -732,7 +767,9 @@ export default function ProductDetail() {
                 Limited slots available each week. Book now to transform your
                 marketing approach and unlock your business's growth potential.
               </p>
-            </p>
+                </p>
+              </>
+            )}
           </div>
         );
 
@@ -749,6 +786,11 @@ export default function ProductDetail() {
                 without paying? I have prepared battle-tested conversion
                 strategies designed for three specific business segments:
               </p>
+            </p>
+
+            {showFullDescription && (
+              <>
+                <p className="font-body text-base text-black leading-relaxed mb-4 flex flex-col gap-2">
               <p className="font-bold">E-commerce Business Owners</p>
               <ul className="list-disc list-inside">
                 <li>
@@ -813,7 +855,9 @@ export default function ProductDetail() {
                 convert serious prospects into paying clients.
               </p>
               <p className="font-bold text-2xl">Get Your Copy Today.</p>
-            </p>
+                </p>
+              </>
+            )}
           </div>
         );
 
