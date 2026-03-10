@@ -1,4 +1,71 @@
 import axios from "axios";
+import crypto from "crypto";
+
+// Meta CAPI Config
+const PIXEL_ID = process.env.PIXEL_ID;
+const META_ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
+const TEST_EVENT_CODE = process.env.TEST_EVENT_CODE;
+
+// Helper to hash data for Meta CAPI (SHA256)
+const hashData = (data) => {
+  if (!data || typeof data !== "string") return null;
+  return crypto
+    .createHash("sha256")
+    .update(data.trim().toLowerCase())
+    .digest("hex");
+};
+
+// Fire Meta CAPI Event
+const fireMetaCAPIEvent = async (eventName, userData, customData) => {
+  if (!PIXEL_ID || !META_ACCESS_TOKEN) {
+    console.warn("Meta CAPI skipped: Missing Pixel ID or Access Token");
+    return;
+  }
+
+  try {
+    const hashedEmail = hashData(userData.email);
+    const hashedPhone = hashData(userData.phone);
+    const hashedFirstName = hashData(userData.firstName);
+
+    const payload = {
+      data: [
+        {
+          event_name: eventName,
+          event_time: Math.floor(Date.now() / 1000),
+          action_source: "website",
+          event_id: customData.event_id,
+          user_data: {
+            em: hashedEmail ? [hashedEmail] : [],
+            ph: hashedPhone ? [hashedPhone] : [],
+            fn: hashedFirstName ? [hashedFirstName] : [],
+            client_user_agent: userData.userAgent,
+            client_ip_address: userData.ip,
+          },
+          custom_data: {
+            value: customData.value,
+            currency: "NGN",
+            content_ids: [customData.productId],
+            content_type: "product",
+          },
+        },
+      ],
+      test_event_code: TEST_EVENT_CODE || undefined,
+    };
+
+    console.log(`[CAPI] Sending ${eventName} for event_id: ${customData.event_id}`);
+    
+    const response = await axios.post(
+      `https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${META_ACCESS_TOKEN}`,
+      payload,
+    );
+    console.log(`[CAPI] Success:`, response.data);
+  } catch (error) {
+    console.error(
+      "[CAPI] Error:",
+      error.response?.data || error.message,
+    );
+  }
+};
 
 // Resend API setup
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -247,6 +314,24 @@ export default async function handler(req, res) {
       );
       // Don't fail the payment verification if email fails
     }
+
+    // Fire Meta CAPI Purchase Event
+    const names = name.split(" ");
+    await fireMetaCAPIEvent(
+      "Purchase",
+      {
+        email: email,
+        phone: phone,
+        firstName: names[0],
+        userAgent: req.headers["user-agent"],
+        ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+      },
+      {
+        value: transaction.amount,
+        productId: product,
+        event_id: reference,
+      },
+    );
 
     res.json({
       success: true,
