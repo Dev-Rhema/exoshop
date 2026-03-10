@@ -66,11 +66,6 @@ function getProductData(productId) {
       file: "/products/stop-losing-clients.pdf",
       type: "download",
     },
-    Test_Payment_1_Naira: {
-      title: "Test Product - 1 Naira",
-      file: "/products/The_Ad_Vault_2.0.pdf",
-      type: "download",
-    },
   };
 
   return mockProducts[productId];
