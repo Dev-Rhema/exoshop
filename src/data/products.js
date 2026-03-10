@@ -80,11 +80,11 @@ const products = [
   },
   {
     id: "Test_Payment_1_Naira",
-    title: "Test Product - 1 Naira",
-    price: 1,
+    title: "Test Product - 100 Naira",
+    price: 100,
     image: "/productImgs/exodigital-logo.png",
     description:
-      "This is a test product for payment verification. Purchase this to test the Paystack payment flow with real money. Price: ₦1 only.",
+      "This is a test product for payment verification. Purchase this to test the Paystack payment flow with real money. Price: ₦100 only.",
     type: "download",
     file: "/products/The_Ad_Vault_2.0.pdf",
     tag: "TEST",
