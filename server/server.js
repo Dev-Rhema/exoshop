@@ -32,6 +32,8 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
     return;
   }
 
+  const TEST_EVENT_CODE = process.env.TEST_EVENT_CODE;
+
   try {
     const payload = {
       data: [
@@ -55,6 +57,7 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
           },
         },
       ],
+      test_event_code: TEST_EVENT_CODE || undefined,
     };
 
     await axios.post(
@@ -237,6 +240,60 @@ app.post("/api/verify-payment", async (req, res) => {
     console.error("Verification error:", error.message);
     res.status(500).json({ error: error.message });
   }
+});
+
+// Paystack Webhook handler
+app.post("/api/paystack-webhook", async (req, res) => {
+  const secret = process.env.PAYSTACK_SECRET_KEY;
+  const signature = req.headers["x-paystack-signature"];
+
+  if (!signature) {
+    return res.status(400).send("No signature");
+  }
+
+  // Verify signature
+  const hash = crypto
+    .createHmac("sha256", secret)
+    .update(JSON.stringify(req.body))
+    .digest("hex");
+
+  if (hash !== signature) {
+    return res.status(400).send("Invalid signature");
+  }
+
+  const { event, data } = req.body;
+
+  if (event === "charge.success") {
+    const { reference, metadata, amount, customer } = data;
+    const productId = metadata?.product;
+
+    console.log(`Webhook: Successful payment received for ref ${reference}`);
+
+    // Avoid duplicate tracking if verify-payment already fired
+    const transactionExists = transactions.find((t) => t.reference === reference);
+    if (!transactionExists) {
+      // Fire Meta CAPI Purchase Event
+      const firstName = metadata?.customer_name?.split(" ")[0] || customer?.first_name;
+      
+      fireMetaCAPIEvent(
+        "Purchase",
+        {
+          email: customer?.email,
+          phone: metadata?.customer_phone || customer?.phone,
+          firstName: firstName,
+          userAgent: req.headers["user-agent"],
+          ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
+        },
+        {
+          value: amount / 100,
+          productId: productId,
+          event_id: reference,
+        },
+      );
+    }
+  }
+
+  res.sendStatus(200);
 });
 
 // Generate email HTML
