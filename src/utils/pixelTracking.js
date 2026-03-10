@@ -4,6 +4,7 @@
  */
 
 export const trackPixelEvent = (eventName, data = {}) => {
+  console.log(`[Pixel Event] ${eventName}`, data);
   if (window.fbq) {
     window.fbq("track", eventName, data);
   }
