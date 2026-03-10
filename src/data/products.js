@@ -35,7 +35,7 @@ const products = [
   {
     id: "Top_10_States_In_Nigeria_To_Target_Rich_People",
     title: "Top 10 States In Nigeria To Target Rich People",
-    price: 5000,
+    price: 100,
     image: "/productImgs/product4.webp",
     description:
       "Stop showing your ads to people who have no money. You are losing profit because you target the wrong crowd. You need to be where the money is.\n\nThis book identifies the top areas in 10 Nigerian states where big spenders live and work.\n\nStop Guessing. Start Selling.\n\nMost marketers throw money at random locations. This is a mistake. Use these specific spots instead:\n\n• Lagos: Reach billionaires on Banana Island for yacht rentals and high-end real estate.\n• Abuja: Target ministers and CEOs in Maitama.\n• Port Harcourt: Find oil executives and expats in GRA.\n• Anambra: Reach millionaire traders in Onitsha and industrialists in Nnewi.\n\nAnd many more.\n\nUnderstand the Habit\n\nKnowing the place is only half the battle. Wealthy people have specific habits.\n\nAn executive in Asokoro is awake and drinking coffee by 6 AM. A tech innovator in Yaba stays up until midnight. You must speak their language.\n\nUse Instagram for the trendy Lagos elite. Use community radio for business owners in Ekwulobia. Context determines your success.\n\nThe Details\n\n• Content: Detailed breakdowns of neighborhoods, business districts, and leisure spots.\n• States Covered: Lagos, Abuja, Rivers, Oyo, Anambra, Imo, Bayelsa, Akwa Ibom, Delta, and Ondo.\n\nFortune favors the bold. Stop overthinking. Your next big sale is waiting in one of these 10 states.\n\nGet your copy for 5,000 Naira now.",
