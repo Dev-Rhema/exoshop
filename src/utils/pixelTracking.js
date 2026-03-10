@@ -31,6 +31,17 @@ export const trackInitiateCheckout = (productId, productTitle, price) => {
   });
 };
 
+// AddToCart - Track when user clicks Pay Now button
+export const trackAddToCart = (productId, productTitle, price) => {
+  trackPixelEvent("AddToCart", {
+    content_name: productTitle,
+    content_ids: [productId],
+    content_type: "product",
+    value: price,
+    currency: "NGN",
+  });
+};
+
 // Purchase - Track successful payment completion
 export const trackPurchase = (productId, productTitle, price, reference) => {
   trackPixelEvent("Purchase", {

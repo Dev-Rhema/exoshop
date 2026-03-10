@@ -5,6 +5,7 @@ import { initiatePaystackCheckout } from "../utils/paystack";
 import {
   trackViewContent,
   trackInitiateCheckout,
+  trackAddToCart,
 } from "../utils/pixelTracking";
 
 const TAG_COLORS = {
@@ -1059,7 +1060,10 @@ export default function ProductDetail() {
               </div>
             ) : (
               <button
-                onClick={() => setEmailPrompt(true)}
+                onClick={() => {
+                  trackAddToCart(product.id, product.title, product.price);
+                  setEmailPrompt(true);
+                }}
                 className="bg-[#4a9eff] text-dark font-mono font-semibold tracking-widest uppercase px-8 py-3 hover:bg-dark hover:text-white transition-colors duration-200 active:scale-95 rounded"
               >
                 Pay now →
