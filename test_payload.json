@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "event_name": "Purchase",
+      "event_time": 1741647700,
+      "action_source": "website",
+      "event_id": "manual_trigger_verify_final_1",
+      "user_data": {
+        "em": ["7b46d0342551ec468e815e12ec6861611794e7724eb87030836ce26589a1f349"]
+      },
+      "custom_data": {
+        "value": 5000,
+        "currency": "NGN"
+      }
+    }
+  ],
+  "test_event_code": "TEST14501"
+}
