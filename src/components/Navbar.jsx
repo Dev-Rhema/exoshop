@@ -7,8 +7,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="font-bold text-2xl text-dark">
           {/* <img src="/productImgs/exodigital-logo.png" alt="Exodigital Logo" /> */}
-          EXODIGITAL
-        </Link>       
+          EXODIGITAL.
+        </Link>
       </div>
     </nav>
   );
