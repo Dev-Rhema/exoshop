@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import products from "../data/products";
+import { trackPurchase } from "../utils/pixelTracking";
 
 const STATUS = {
   LOADING: "loading",
@@ -69,6 +70,14 @@ export default function Success() {
         setProduct(foundProduct);
         setStatus(STATUS.SUCCESS);
 
+        // Track successful purchase
+        trackPurchase(
+          foundProduct.id,
+          foundProduct.title,
+          foundProduct.price,
+          reference,
+        );
+
         // Clear checkout data
         localStorage.removeItem("checkoutData");
       } catch (err) {
@@ -91,7 +100,7 @@ export default function Success() {
     try {
       const response = await fetch(fileUrl);
       if (!response.ok) throw new Error("Network response was not ok");
-      
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");

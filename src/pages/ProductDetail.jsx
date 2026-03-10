@@ -1,7 +1,11 @@
 import { useParams, useNavigate } from "react-router-dom";
 import products from "../data/products";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { initiatePaystackCheckout } from "../utils/paystack";
+import {
+  trackViewContent,
+  trackInitiateCheckout,
+} from "../utils/pixelTracking";
 
 const TAG_COLORS = {
   EBOOK: "bg-blue-50 text-blue-700 border-blue-200",
@@ -43,6 +47,13 @@ export default function ProductDetail() {
     );
   }
 
+  // Track product view on page load
+  useEffect(() => {
+    if (product) {
+      trackViewContent(product.id, product.title, product.price);
+    }
+  }, [product?.id]);
+
   const validateEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
   const validatePhone = (val) =>
     /^[0-9+()\\s-]{10,}$/.test(val.replace(/\s/g, ""));
@@ -67,6 +78,9 @@ export default function ProductDetail() {
     setError("");
     setEmailPrompt(false);
     setLoading(true);
+
+    // Track checkout initiation
+    trackInitiateCheckout(product.id, product.title, product.price);
 
     // Store checkout data in localStorage for Success page
     localStorage.setItem(
@@ -308,7 +322,13 @@ export default function ProductDetail() {
                       setup
                     </p>
                     <br />
-                    <img src="/productImgs/ad-setup-chat.jpeg" alt="" />
+                    <div className="w-[400px] max-md:w-[300px]">
+                      <img
+                        src="/productImgs/ad-setup-chat.jpeg"
+                        className="w-full"
+                        alt=""
+                      />
+                    </div>
                     <br />
                     Here's what you get:
                   </p>
@@ -723,7 +743,13 @@ export default function ProductDetail() {
               <p className=" font-bold">
                 My student made 19 million naira in 48 hours. after this session
               </p>
-              <img src="/productImgs/clarity.jpeg" alt="" />
+              <div className="w-[400px] max-md:w-[300px]">
+                <img
+                  src="/productImgs/clarity.jpeg"
+                  className="w-full"
+                  alt=""
+                />
+              </div>
               <p className="font-bold">
                 Full refund if you do not get any value. There is no risk to
                 you, only gains. <br /> Book a 1:1 Clarity Session with Ebuka
