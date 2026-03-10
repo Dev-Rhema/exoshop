@@ -9,6 +9,11 @@ export const trackPixelEvent = (eventName, data = {}) => {
   }
 };
 
+// PageView
+export const trackPageView = () => {
+  trackPixelEvent("PageView");
+};
+
 // ViewContent - Track when user views a product
 export const trackViewContent = (productId, productTitle, price) => {
   trackPixelEvent("ViewContent", {
@@ -20,31 +25,20 @@ export const trackViewContent = (productId, productTitle, price) => {
   });
 };
 
-// Checkout - Track when user clicks the Pay Now button
-export const trackCheckout = (productId, productTitle, price) => {
-  trackPixelEvent("Checkout", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-  });
-};
-
-// InitiateCheckout - Track when user starts payment process
-export const trackInitiateCheckout = (productId, productTitle, price) => {
-  trackPixelEvent("InitiateCheckout", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-  });
-};
-
-// AddToCart - Track when user clicks Checkout button
+// AddToCart - Track when "Pay now" is clicked
 export const trackAddToCart = (productId, productTitle, price) => {
   trackPixelEvent("AddToCart", {
+    content_name: productTitle,
+    content_ids: [productId],
+    content_type: "product",
+    value: price,
+    currency: "NGN",
+  });
+};
+
+// InitiateCheckout - Track when "Continue" in modal is clicked
+export const trackInitiateCheckout = (productId, productTitle, price) => {
+  trackPixelEvent("InitiateCheckout", {
     content_name: productTitle,
     content_ids: [productId],
     content_type: "product",
@@ -62,28 +56,5 @@ export const trackPurchase = (productId, productTitle, price, reference) => {
     value: price,
     currency: "NGN",
     transaction_id: reference,
-  });
-};
-
-// Lead - Track consultation/contact form submissions
-export const trackLead = (productId, productTitle) => {
-  trackPixelEvent("Lead", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-  });
-};
-
-// PageView - Already handled in index.html, but can be called manually if needed
-export const trackPageView = () => {
-  trackPixelEvent("PageView");
-};
-
-// Custom event - Add to favorites (if implemented later)
-export const trackAddToFavorites = (productId, productTitle) => {
-  trackPixelEvent("AddToFavorites", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
   });
 };
