@@ -1069,7 +1069,7 @@ export default function ProductDetail() {
                 }}
                 className="bg-[#4a9eff] text-dark font-mono font-semibold tracking-widest uppercase px-8 py-3 hover:bg-dark hover:text-white transition-colors duration-200 active:scale-95 rounded"
               >
-                Pay now →
+                Continue to payment →
               </button>
             )}
           </div>
