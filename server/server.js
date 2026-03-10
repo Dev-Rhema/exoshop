@@ -16,9 +16,8 @@ const PORT = process.env.PORT || 5000;
 const PIXEL_ID = process.env.PIXEL_ID;
 const META_ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
 
-// Helper to hash data for Meta CAPI (SHA256)
 const hashData = (data) => {
-  if (!data) return null;
+  if (!data || typeof data !== "string") return null;
   return crypto
     .createHash("sha256")
     .update(data.trim().toLowerCase())
@@ -35,6 +34,10 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
   const TEST_EVENT_CODE = process.env.TEST_EVENT_CODE;
 
   try {
+    const hashedEmail = hashData(userData.email);
+    const hashedPhone = hashData(userData.phone);
+    const hashedFirstName = hashData(userData.firstName);
+
     const payload = {
       data: [
         {
@@ -43,9 +46,9 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
           action_source: "website",
           event_id: customData.event_id,
           user_data: {
-            em: [hashData(userData.email)],
-            ph: [hashData(userData.phone)],
-            fn: [hashData(userData.firstName)],
+            em: hashedEmail ? [hashedEmail] : [],
+            ph: hashedPhone ? [hashedPhone] : [],
+            fn: hashedFirstName ? [hashedFirstName] : [],
             client_user_agent: userData.userAgent,
             client_ip_address: userData.ip,
           },
@@ -60,14 +63,17 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
       test_event_code: TEST_EVENT_CODE || undefined,
     };
 
-    await axios.post(
+    console.log(`[CAPI] Sending ${eventName} for event_id: ${customData.event_id}`);
+    if (TEST_EVENT_CODE) console.log(`[CAPI] Using Test Code: ${TEST_EVENT_CODE}`);
+
+    const response = await axios.post(
       `https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${META_ACCESS_TOKEN}`,
       payload,
     );
-    console.log(`Meta CAPI: ${eventName} sent successfully`);
+    console.log(`[CAPI] Success:`, response.data);
   } catch (error) {
     console.error(
-      "Meta CAPI Error:",
+      "[CAPI] Error:",
       error.response?.data || error.message,
     );
   }
