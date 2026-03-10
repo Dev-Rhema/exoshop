@@ -6,7 +6,6 @@ import {
   trackViewContent,
   trackAddToCart,
   trackInitiateCheckout,
-  trackPurchase,
 } from "../utils/pixelTracking";
 
 const TAG_COLORS = {
@@ -109,16 +108,6 @@ export default function ProductDetail() {
       onSuccess: (response) => {
         setLoading(false);
         console.log("[Paystack Success Callback]", response);
-        
-        // Final guard: Only fire Purchase if status is explicitly 'success'
-        if (response && response.status === "success") {
-          trackPurchase(
-            product.id,
-            product.title,
-            product.price,
-            response.reference,
-          );
-        }
         
         navigate(`/success?reference=${response.reference}`);
       },

@@ -48,14 +48,4 @@ export const trackInitiateCheckout = (productId, productTitle, price) => {
   });
 };
 
-// Purchase - Track successful payment completion
-export const trackPurchase = (productId, productTitle, price, reference) => {
-  trackPixelEvent("Purchase", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-    transaction_id: reference,
-  });
-};
+
