@@ -70,13 +70,15 @@ export default function Success() {
         setProduct(foundProduct);
         setStatus(STATUS.SUCCESS);
 
-        // Track successful purchase
-        trackPurchase(
-          foundProduct.id,
-          foundProduct.title,
-          foundProduct.price,
-          reference,
-        );
+        // Only track purchase if payment verification returned success
+        if (data && data.amount) {
+          trackPurchase(
+            foundProduct.id,
+            foundProduct.title,
+            foundProduct.price,
+            reference,
+          );
+        }
 
         // Clear checkout data
         localStorage.removeItem("checkoutData");
