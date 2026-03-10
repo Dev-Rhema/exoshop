@@ -71,6 +71,8 @@ export default function Success() {
         setStatus(STATUS.SUCCESS);
 
         // Track purchase if not already tracked for this reference
+        // Browser tracking removed to rely on Server-side CAPI for Purchase
+        /*
         const trackedKey = `purchase_tracked_${reference}`;
         if (!localStorage.getItem(trackedKey)) {
           trackPurchase(
@@ -81,6 +83,7 @@ export default function Success() {
           );
           localStorage.setItem(trackedKey, "true");
         }
+        */
 
         // Clear checkout data
         localStorage.removeItem("checkoutData");
