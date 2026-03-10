@@ -42,18 +42,6 @@ export const trackAddToCart = (productId, productTitle, price) => {
   });
 };
 
-// Purchase - Track successful payment completion
-export const trackPurchase = (productId, productTitle, price, reference) => {
-  trackPixelEvent("Purchase", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-    transaction_id: reference,
-  });
-};
-
 // Lead - Track consultation/contact form submissions
 export const trackLead = (productId, productTitle) => {
   trackPixelEvent("Lead", {

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import products from "../data/products";
-import { trackPurchase } from "../utils/pixelTracking";
 
 const STATUS = {
   LOADING: "loading",
@@ -69,14 +68,6 @@ export default function Success() {
         setTransactionData(data);
         setProduct(foundProduct);
         setStatus(STATUS.SUCCESS);
-
-        // Track successful purchase
-        trackPurchase(
-          foundProduct.id,
-          foundProduct.title,
-          foundProduct.price,
-          reference,
-        );
 
         // Clear checkout data
         localStorage.removeItem("checkoutData");
