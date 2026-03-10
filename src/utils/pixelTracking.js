@@ -47,13 +47,18 @@ export const trackInitiateCheckout = (productId, productTitle, price) => {
 
 export const trackPurchase = (productId, productTitle, price, reference) => {
   if (window.fbq) {
-    window.fbq("track", "Purchase", {
-      content_name: productTitle,
-      content_ids: [productId],
-      content_type: "product",
-      value: price,
-      currency: "NGN",
-      transaction_id: reference,
-    });
+    window.fbq(
+      "track",
+      "Purchase",
+      {
+        content_name: productTitle,
+        content_ids: [productId],
+        content_type: "product",
+        value: price,
+        currency: "NGN",
+        transaction_id: reference,
+      },
+      { eventID: reference },
+    );
   }
 };
