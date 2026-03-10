@@ -567,94 +567,105 @@ export default function ProductDetail() {
         return (
           <div>
             {/* Customize GOOGLE & YOUTUBE ADS description here */}
-            <p className="font-body text-base flex flex-col gap-2 text-black leading-relaxed mb-4">
-              <p className="font-bold text-[18px]">
+            <div className="font-body text-base text-black leading-relaxed mb-4">
+              <p className="font-bold text-[18px] mb-4">
                 Master Google & YouTube Ads in Naira
               </p>
-              <p className="font-bold text-[18px]">
+              <p className="font-bold text-[18px] mb-4">
                 No Dollar Card? No Live Class Stress? No Problem! <br />
                 (Instant Access to Replay + All Resources)
               </p>
-              <p className="font-bold">What You’ll Learn:</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  <span className="font-bold">
-                    Pay for Google Ads in Naira:{" "}
-                  </span>{" "}
-                  Skip dollar cards and complex forex hassles!
-                </li>
-                <li>
-                  <span className="font-bold">
-                    Beginner-Friendly Dashboard Walkthrough:{" "}
-                  </span>{" "}
-                  From “What’s a campaign?” to pro-level setup.
-                </li>
-                <li>
-                  <span className="font-bold">Fix Wasted Ad Spend: </span> Track
-                  real conversions (not just clicks!) + avoid wrong keywords.
-                </li>
-                <li>
-                  <span className="font-bold">YouTube Ads Demystified: </span>{" "}
-                  Run video campaigns even with small budgets (₦50k/day).
-                </li>
-                <li>
-                  <span className="font-bold">Bidding Hacks for Nigeria: </span>{" "}
-                  Outsmart competitors without overspending.
-                </li>
-              </ul>
-              <br />
-              <p className="font-bold">Perfect For:</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  Business owners tired of “abroad” strategies that don’t work
-                  in Nigeria.
-                </li>
-                <li>
-                  Marketers who want to run ads today but hate confusing
-                  dashboards.
-                </li>
-                <li>
-                  Anyone who needs flexible learning (pause, rewatch, and
-                  implement!).
-                </li>
-              </ul>
-              <p className="font-bold">Why This Replay?</p>
-              <ul className="list-disc list-inside">
-                <li>
-                  <span className="font-bold">No Fluff, No Theory: </span> Only
-                  what works for Nigerian audiences.
-                </li>
-                <li>
-                  <span className="font-bold">Learn at Your Pace: </span> Watch
-                  from your phone or laptop—anytime, anywhere.
-                </li>
-                <li>
-                  <span className="font-bold">₦17,500 One-Time Fee: </span> Less
-                  than 2% of your future ad budget!
-                </li>
-              </ul>
-              <p className="font-bold">Modules:</p>
-              <ul className="list-disc list-inside">
-                <li>Pay Google Ads in Naira (No dollar card needed!)</li>
-                <li>Dashboard Setup for Beginners</li>
-                <li>Keyword Planning for Nigerian Searches</li>
-                <li>YouTube Ads That Convert</li>
-                <li>Track Sales, Not Just Clicks</li>
-                <li>Bidding Strategies for Small Budgets</li>
-              </ul>
-              <p className="font-bold">💰 Price: ₦17,500 (One-Time Payment)</p>
-              <br />
-              <p className="font-bold">What If I Get Stuck?</p>
-              <p>
-                Email support included! Send questions anytime, and we’ll guide
-                you.
-              </p>
-              <p className="font-bold">
-                Stop Guessing, Start Scaling. <br />
-                Your ₦17,500 Today = Thousands in Sales Tomorrow.
-              </p>
-              <p className="font-bold">GET ACCESS NOW →</p>
-            </p>
+              {showFullDescription && (
+                <>
+                  <p className="font-bold">What You’ll Learn:</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      <span className="font-bold">
+                        Pay for Google Ads in Naira:{" "}
+                      </span>{" "}
+                      Skip dollar cards and complex forex hassles!
+                    </li>
+                    <li>
+                      <span className="font-bold">
+                        Beginner-Friendly Dashboard Walkthrough:{" "}
+                      </span>{" "}
+                      From “What’s a campaign?” to pro-level setup.
+                    </li>
+                    <li>
+                      <span className="font-bold">Fix Wasted Ad Spend: </span>{" "}
+                      Track real conversions (not just clicks!) + avoid wrong
+                      keywords.
+                    </li>
+                    <li>
+                      <span className="font-bold">
+                        YouTube Ads Demystified:{" "}
+                      </span>{" "}
+                      Run video campaigns even with small budgets (₦50k/day).
+                    </li>
+                    <li>
+                      <span className="font-bold">
+                        Bidding Hacks for Nigeria:{" "}
+                      </span>{" "}
+                      Outsmart competitors without overspending.
+                    </li>
+                  </ul>
+                  <br />
+                  <p className="font-bold">Perfect For:</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      Business owners tired of “abroad” strategies that don’t
+                      work in Nigeria.
+                    </li>
+                    <li>
+                      Marketers who want to run ads today but hate confusing
+                      dashboards.
+                    </li>
+                    <li>
+                      Anyone who needs flexible learning (pause, rewatch, and
+                      implement!).
+                    </li>
+                  </ul>
+                  <p className="font-bold">Why This Replay?</p>
+                  <ul className="list-disc list-inside">
+                    <li>
+                      <span className="font-bold">No Fluff, No Theory: </span>{" "}
+                      Only what works for Nigerian audiences.
+                    </li>
+                    <li>
+                      <span className="font-bold">Learn at Your Pace: </span>{" "}
+                      Watch from your phone or laptop—anytime, anywhere.
+                    </li>
+                    <li>
+                      <span className="font-bold">₦17,500 One-Time Fee: </span>{" "}
+                      Less than 2% of your future ad budget!
+                    </li>
+                  </ul>
+                  <p className="font-bold">Modules:</p>
+                  <ul className="list-disc list-inside">
+                    <li>Pay Google Ads in Naira (No dollar card needed!)</li>
+                    <li>Dashboard Setup for Beginners</li>
+                    <li>Keyword Planning for Nigerian Searches</li>
+                    <li>YouTube Ads That Convert</li>
+                    <li>Track Sales, Not Just Clicks</li>
+                    <li>Bidding Strategies for Small Budgets</li>
+                  </ul>
+                  <p className="font-bold">
+                    💰 Price: ₦17,500 (One-Time Payment)
+                  </p>
+                  <br />
+                  <p className="font-bold">What If I Get Stuck?</p>
+                  <p>
+                    Email support included! Send questions anytime, and we’ll
+                    guide you.
+                  </p>
+                  <p className="font-bold">
+                    Stop Guessing, Start Scaling. <br />
+                    Your ₦17,500 Today = Thousands in Sales Tomorrow.
+                  </p>
+                  <p className="font-bold">GET ACCESS NOW →</p>
+                </>
+              )}
+            </div>
           </div>
         );
 
