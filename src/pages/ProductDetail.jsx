@@ -106,10 +106,17 @@ export default function ProductDetail() {
       name,
       phone,
       email,
-      onSuccess: (reference) => {
+      onSuccess: (response) => {
         setLoading(false);
-        trackPurchase(product.id, product.title, product.price, reference);
-        navigate(`/success?reference=${reference}`);
+        if (response.status === "success") {
+          trackPurchase(
+            product.id,
+            product.title,
+            product.price,
+            response.reference,
+          );
+        }
+        navigate(`/success?reference=${response.reference}`);
       },
       onClose: () => {
         setLoading(false);

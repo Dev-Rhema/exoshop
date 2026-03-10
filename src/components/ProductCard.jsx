@@ -47,9 +47,9 @@ export default function ProductCard({ product }) {
     initiatePaystackCheckout({
       product,
       email,
-      onSuccess: (reference) => {
+      onSuccess: (response) => {
         setLoading(false);
-        navigate(`/success?reference=${reference}`);
+        navigate(`/success?reference=${response.reference}`);
       },
       onClose: () => {
         setLoading(false);

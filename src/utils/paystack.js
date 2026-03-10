@@ -13,7 +13,7 @@ if (!PAYSTACK_PUBLIC_KEY) {
  * @param {string} name - Customer name
  * @param {string} phone - Customer phone
  * @param {string} email - Customer email
- * @param {Function} onSuccess - Called with reference on success
+ * @param {Function} onSuccess - Called with the full response on success
  * @param {Function} onClose - Called when modal is closed
  */
 export function initiatePaystackCheckout({
@@ -57,7 +57,7 @@ export function initiatePaystackCheckout({
       ],
     },
     callback: function (response) {
-      onSuccess(response.reference);
+      onSuccess(response);
     },
     onClose: function () {
       if (onClose) onClose();
