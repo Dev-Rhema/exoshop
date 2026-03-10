@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { initiatePaystackCheckout } from "../utils/paystack";
 import {
   trackViewContent,
-  trackInitiateCheckout,
+  trackCheckout,
   trackAddToCart,
 } from "../utils/pixelTracking";
 
@@ -80,8 +80,8 @@ export default function ProductDetail() {
     setEmailPrompt(false);
     setLoading(true);
 
-    // Track checkout initiation
-    trackInitiateCheckout(product.id, product.title, product.price);
+    // Track checkout
+    trackCheckout(product.id, product.title, product.price);
 
     // Store checkout data in localStorage for Success page
     localStorage.setItem(

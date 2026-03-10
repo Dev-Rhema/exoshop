@@ -20,6 +20,17 @@ export const trackViewContent = (productId, productTitle, price) => {
   });
 };
 
+// Checkout - Track when user clicks the Pay Now button
+export const trackCheckout = (productId, productTitle, price) => {
+  trackPixelEvent("Checkout", {
+    content_name: productTitle,
+    content_ids: [productId],
+    content_type: "product",
+    value: price,
+    currency: "NGN",
+  });
+};
+
 // InitiateCheckout - Track when user starts payment process
 export const trackInitiateCheckout = (productId, productTitle, price) => {
   trackPixelEvent("InitiateCheckout", {
@@ -31,7 +42,7 @@ export const trackInitiateCheckout = (productId, productTitle, price) => {
   });
 };
 
-// AddToCart - Track when user clicks Pay Now button
+// AddToCart - Track when user clicks Checkout button
 export const trackAddToCart = (productId, productTitle, price) => {
   trackPixelEvent("AddToCart", {
     content_name: productTitle,
@@ -39,6 +50,18 @@ export const trackAddToCart = (productId, productTitle, price) => {
     content_type: "product",
     value: price,
     currency: "NGN",
+  });
+};
+
+// Purchase - Track successful payment completion
+export const trackPurchase = (productId, productTitle, price, reference) => {
+  trackPixelEvent("Purchase", {
+    content_name: productTitle,
+    content_ids: [productId],
+    content_type: "product",
+    value: price,
+    currency: "NGN",
+    transaction_id: reference,
   });
 };
 
