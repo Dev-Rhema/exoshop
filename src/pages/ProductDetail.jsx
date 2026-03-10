@@ -2,10 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import products from "../data/products";
 import { useState, useEffect } from "react";
 import { initiatePaystackCheckout } from "../utils/paystack";
-import {
-  trackViewContent,
-  trackAddToCart,
-} from "../utils/pixelTracking";
+import { trackViewContent, trackAddToCart } from "../utils/pixelTracking";
 
 const TAG_COLORS = {
   EBOOK: "bg-blue-50 text-blue-700 border-blue-200",
