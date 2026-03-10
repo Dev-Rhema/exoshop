@@ -6,6 +6,7 @@ import {
   trackViewContent,
   trackAddToCart,
   trackInitiateCheckout,
+  trackPurchase,
 } from "../utils/pixelTracking";
 
 const TAG_COLORS = {
@@ -48,23 +49,17 @@ export default function ProductDetail() {
     );
   }
 
+
+  const validateEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  const validatePhone = (val) =>
+    /^[0-9+()\\s-]{10,}$/.test(val.replace(/\s/g, ""));
+
   // Track product view on page load
   useEffect(() => {
     if (product) {
       trackViewContent(product.id, product.title, product.price);
     }
   }, [product?.id]);
-
-
-  const validateEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-  const validatePhone = (val) =>
-    /^[0-9+()\\s-]{10,}$/.test(val.replace(/\s/g, ""));
-
-  const handlePayNowClick = () => {
-    setEmailPrompt(true);
-    // Track AddToCart when "Pay now" is clicked
-    trackAddToCart(product.id, product.title, product.price);
-  };
 
   const handleCheckout = () => {
     if (!name.trim()) {
@@ -87,8 +82,9 @@ export default function ProductDetail() {
     setEmailPrompt(false);
     setLoading(true);
 
-    // Track InitiateCheckout when "Continue" in modal clicked
+    // Track checkout initiation (Modal continue clicked)
     trackInitiateCheckout(product.id, product.title, product.price);
+
 
     // Store checkout data in localStorage for Success page
     localStorage.setItem(
@@ -105,11 +101,11 @@ export default function ProductDetail() {
       name,
       phone,
       email,
-      onSuccess: (response) => {
+      onSuccess: (reference) => {
         setLoading(false);
-        console.log("[Paystack Success Callback]", response);
-        
-        navigate(`/success?reference=${response.reference}`);
+        // Track purchase success
+        trackPurchase(product.id, product.title, product.price, reference);
+        navigate(`/success?reference=${reference}`);
       },
       onClose: () => {
         setLoading(false);
@@ -1069,7 +1065,10 @@ export default function ProductDetail() {
               </div>
             ) : (
               <button
-                onClick={handlePayNowClick}
+                onClick={() => {
+                  trackAddToCart(product.id, product.title, product.price);
+                  setEmailPrompt(true);
+                }}
                 className="bg-[#4a9eff] text-dark font-mono font-semibold tracking-widest uppercase px-8 py-3 hover:bg-dark hover:text-white transition-colors duration-200 active:scale-95 rounded"
               >
                 Pay now →

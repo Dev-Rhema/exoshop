@@ -1,51 +1,59 @@
 /**
- * Meta Pixel event tracking utility
- * Tracks user actions for conversion optimization and audience building
+ * Meta Pixel Tracking Utility
+ * Pixel ID: 321371546941156
  */
 
-export const trackPixelEvent = (eventName, data = {}) => {
-  console.log(`[Pixel Event] ${eventName}`, data);
+export const trackPageView = () => {
   if (window.fbq) {
-    window.fbq("track", eventName, data);
+    window.fbq("track", "PageView");
   }
 };
 
-// PageView
-export const trackPageView = () => {
-  trackPixelEvent("PageView");
-};
-
-// ViewContent - Track when user views a product
 export const trackViewContent = (productId, productTitle, price) => {
-  trackPixelEvent("ViewContent", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-  });
+  if (window.fbq) {
+    window.fbq("track", "ViewContent", {
+      content_name: productTitle,
+      content_ids: [productId],
+      content_type: "product",
+      value: price,
+      currency: "NGN",
+    });
+  }
 };
 
-// AddToCart - Track when "Pay now" is clicked
 export const trackAddToCart = (productId, productTitle, price) => {
-  trackPixelEvent("AddToCart", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-  });
+  if (window.fbq) {
+    window.fbq("track", "AddToCart", {
+      content_name: productTitle,
+      content_ids: [productId],
+      content_type: "product",
+      value: price,
+      currency: "NGN",
+    });
+  }
 };
 
-// InitiateCheckout - Track when "Continue" in modal is clicked
 export const trackInitiateCheckout = (productId, productTitle, price) => {
-  trackPixelEvent("InitiateCheckout", {
-    content_name: productTitle,
-    content_ids: [productId],
-    content_type: "product",
-    value: price,
-    currency: "NGN",
-  });
+  if (window.fbq) {
+    window.fbq("track", "InitiateCheckout", {
+      content_name: productTitle,
+      content_ids: [productId],
+      content_type: "product",
+      value: price,
+      currency: "NGN",
+    });
+  }
 };
 
-
+export const trackPurchase = (productId, productTitle, price, reference) => {
+  if (window.fbq) {
+    window.fbq("track", "Purchase", {
+      content_name: productTitle,
+      content_ids: [productId],
+      content_type: "product",
+      value: price,
+      currency: "NGN",
+      transaction_id: reference,
+    });
+  }
+};

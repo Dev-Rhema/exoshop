@@ -40,6 +40,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -66,16 +67,11 @@
         "script",
         "https://connect.facebook.net/en_US/fbevents.js",
       );
-      fbq("set", "autoConfig", false, "1439469536842273");
-      fbq("set", "allowAutomaticEvents", false, "1439469536842273");
+      fbq("init", "321371546941156");
       fbq("set", "autoConfig", false, "321371546941156");
-      fbq("set", "allowAutomaticEvents", false, "321371546941156");
-      fbq("init", "1439469536842273");
       fbq("track", "PageView");
     </script>
     <!-- End Meta Pixel Code -->
-
-    <script src="https://js.paystack.co/v1/inline.js"></script>
   </head>
   <body>
     <div id="root"></div>
@@ -84,7 +80,8 @@
       <img
         height="1"
         width="1"
-        src="https://www.facebook.com/tr?id=1439469536842273&ev=PageView&noscript=1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=321371546941156&ev=PageView&noscript=1"
       />
     </noscript>
     <script type="module" src="/src/main.jsx"></script>

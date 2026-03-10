@@ -13,7 +13,7 @@ if (!PAYSTACK_PUBLIC_KEY) {
  * @param {string} name - Customer name
  * @param {string} phone - Customer phone
  * @param {string} email - Customer email
- * @param {Function} onSuccess - Called with the full response on success
+ * @param {Function} onSuccess - Called with reference on success
  * @param {Function} onClose - Called when modal is closed
  */
 export function initiatePaystackCheckout({
@@ -56,13 +56,8 @@ export function initiatePaystackCheckout({
         },
       ],
     },
-    onOpen: () => {
-      // Modal opened
-    },
     callback: function (response) {
-      // Paystack callback is traditionally only successful transactions in Inline
-      // but we'll pass it back for the status check
-      onSuccess(response);
+      onSuccess(response.reference);
     },
     onClose: function () {
       if (onClose) onClose();
