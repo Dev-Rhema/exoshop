@@ -18,7 +18,7 @@ const hashData = (data) => {
 // Fire Meta CAPI Event
 const fireMetaCAPIEvent = async (eventName, userData, customData) => {
   if (!PIXEL_ID || !META_ACCESS_TOKEN) {
-    console.warn("Meta CAPI skipped: Missing Pixel ID or Access Token");
+    console.warn(`Meta CAPI skipped: Missing PIXEL_ID (${!!PIXEL_ID}) or META_ACCESS_TOKEN (${!!META_ACCESS_TOKEN})`);
     return;
   }
 

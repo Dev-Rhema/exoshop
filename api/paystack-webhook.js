@@ -12,7 +12,10 @@ const hashData = (data) => {
 };
 
 const fireMetaCAPIEvent = async (eventName, userData, customData) => {
-  if (!PIXEL_ID || !META_ACCESS_TOKEN) return;
+  if (!PIXEL_ID || !META_ACCESS_TOKEN) {
+    console.error(`[CAPI Webhook] Skipping: Missing PIXEL_ID (${!!PIXEL_ID}) or META_ACCESS_TOKEN (${!!META_ACCESS_TOKEN})`);
+    return;
+  }
   try {
     const payload = {
       data: [{
