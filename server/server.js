@@ -344,7 +344,7 @@ function generateEmailContent(name, productData, transaction, email) {
           border-radius: 4px;
           font-weight: bold;
         ">
-          Open Link
+          Access Your Product
         </a>
       </div>
     `;
