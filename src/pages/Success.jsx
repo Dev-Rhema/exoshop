@@ -223,6 +223,9 @@ export default function Success() {
                 <br />
                 <span className="text-[#4a9eff]">ALL SET.</span>
               </h1>
+              <p className="mt-4 font-body text-sm text-mist/80 italic">
+                A copy of your product and receipt has also been sent to your email.
+              </p>
             </div>
 
             {/* Product card */}

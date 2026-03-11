@@ -67,7 +67,7 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
 
 // Resend API setup
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const EMAIL_FROM = process.env.EMAIL_FROM || "noreply@shop.exodigital.org";
+const EMAIL_FROM = process.env.EMAIL_FROM || "Exodigital <noreply@shop.exodigital.org>";
 
 const mockProducts = {
   "THE_AD_VAULT_2.0": {

@@ -88,7 +88,7 @@ app.use(express.json());
 
 // Resend API setup
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const EMAIL_FROM = process.env.EMAIL_USER || "noreply@exodigital.com";
+const EMAIL_FROM = process.env.EMAIL_FROM || "Exodigital <noreply@shop.exodigital.org>";
 
 // Simple in-memory store for transactions (can be replaced with database)
 const transactions = [];
