@@ -5,7 +5,6 @@ import axios from "axios";
 // Meta CAPI Config
 const PIXEL_ID = process.env.PIXEL_ID;
 const META_ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
-const TEST_EVENT_CODE = process.env.TEST_EVENT_CODE;
 
 const hashData = (data) => {
   if (!data || typeof data !== "string") return null;
@@ -38,7 +37,6 @@ const fireMetaCAPIEvent = async (eventName, userData, customData) => {
           content_type: "product",
         },
       }],
-      test_event_code: TEST_EVENT_CODE || undefined,
     };
     await axios.post(`https://graph.facebook.com/v18.0/${PIXEL_ID}/events?access_token=${META_ACCESS_TOKEN}`, payload);
     console.log(`[CAPI Webhook] Success for ${customData.event_id}`);

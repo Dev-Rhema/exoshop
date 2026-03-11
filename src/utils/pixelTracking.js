@@ -1,4 +1,4 @@
-const TEST_EVENT_CODE = import.meta.env.VITE_TEST_EVENT_CODE;
+// Final Production Mode - No Test Code
 
 // Re-usable helper to send events to server for CAPI (Ensures 100% IP/UA coverage)
 const sendToServerCAPI = async (eventName, params = {}, options = {}) => {
@@ -22,11 +22,7 @@ const sendToServerCAPI = async (eventName, params = {}, options = {}) => {
 
 export const trackPageView = () => {
   if (window.fbq) {
-    if (TEST_EVENT_CODE) {
-      window.fbq("track", "PageView", {}, { testEventCode: TEST_EVENT_CODE });
-    } else {
-      window.fbq("track", "PageView");
-    }
+    window.fbq("track", "PageView");
   }
   // REDUNDANT SERVER TRACKING
   sendToServerCAPI("PageView");
@@ -42,11 +38,7 @@ export const trackViewContent = (productId, productTitle, price) => {
   };
 
   if (window.fbq) {
-    if (TEST_EVENT_CODE) {
-      window.fbq("track", "ViewContent", params, { testEventCode: TEST_EVENT_CODE });
-    } else {
-      window.fbq("track", "ViewContent", params);
-    }
+    window.fbq("track", "ViewContent", params);
   }
 
   // REDUNDANT SERVER TRACKING
@@ -63,11 +55,7 @@ export const trackAddToCart = (productId, productTitle, price) => {
   };
 
   if (window.fbq) {
-    if (TEST_EVENT_CODE) {
-      window.fbq("track", "AddToCart", params, { testEventCode: TEST_EVENT_CODE });
-    } else {
-      window.fbq("track", "AddToCart", params);
-    }
+    window.fbq("track", "AddToCart", params);
   }
 
   // REDUNDANT SERVER TRACKING
@@ -84,11 +72,7 @@ export const trackInitiateCheckout = (productId, productTitle, price) => {
   };
 
   if (window.fbq) {
-    if (TEST_EVENT_CODE) {
-      window.fbq("track", "InitiateCheckout", params, { testEventCode: TEST_EVENT_CODE });
-    } else {
-      window.fbq("track", "InitiateCheckout", params);
-    }
+    window.fbq("track", "InitiateCheckout", params);
   }
 
   // REDUNDANT SERVER TRACKING
@@ -106,9 +90,6 @@ export const trackPurchase = (productId, productTitle, price, reference) => {
       transaction_id: reference,
     };
     const options = { eventID: reference };
-    if (TEST_EVENT_CODE) {
-      options.testEventCode = TEST_EVENT_CODE;
-    }
     window.fbq("track", "Purchase", params, options);
   }
 };
