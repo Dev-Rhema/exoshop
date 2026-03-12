@@ -1108,6 +1108,16 @@ export default function ProductDetail() {
             {error && (
               <p className="text-xs text-red-400 font-mono mb-4">{error}</p>
             )}
+
+            {/* International Payment Guide */}
+            <div className="bg-dark/5 p-3 rounded border border-dark/10 mb-6">
+              <p className="text-[10px] text-black/60 text-center leading-relaxed uppercase tracking-wider">
+                <span className="text-[#4a9eff] font-bold">🌍 International Users</span>
+                <br />
+                Use <span className="text-black font-bold">Visa or Mastercard</span>. Ensure your bank has enabled international online payments for your card.
+              </p>
+            </div>
+
             <div className="flex gap-2">
               <button
                 onClick={() => {
