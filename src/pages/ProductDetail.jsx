@@ -322,13 +322,19 @@ export default function ProductDetail() {
                     <br />
                     <br />
                     <p className="font-bold text-[18px]">
-                      Below is a review from a business owner after our ads
-                      setup
+                      Below are reviews from business owners after our ads setup
                     </p>
                     <br />
                     <div className="w-[400px] max-md:w-[300px]">
                       <img
                         src="/productImgs/ad-setup-chat.jpeg"
+                        className="w-full"
+                        alt=""
+                      />
+                    </div>
+                    <div className="w-[400px] max-md:w-[300px] mt-4">
+                      <img
+                        src="/productImgs/adreview.jpeg"
                         className="w-full"
                         alt=""
                       />
