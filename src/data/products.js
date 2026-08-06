@@ -57,7 +57,7 @@ const products = [
   {
     id: "Clarity_Session_With_Ebuka",
     title: "Clarity Session With Ebuka",
-    price: 75000,
+    price: 100000,
     image: "/productImgs/product6.webp",
     description:
       "STOP LOOSING MONEY\n\nMy student made 19 million naira in 48 hours. after this session\n\nFull refund if you do not get any value. There is no risk to you, only gains\n\nBook a 1:1 Clarity Session with Ebuka\n\nStruggling to scale your business through effective marketing? Get actionable insights from a growth expert who has:\n\n• Generated over 1M+ users for PiggyVest through strategic campaigns\n• Managed £1M+ in ad spend optimization for TransferGO\n• Achieved 500% user base growth for fintech products\n• Driven 70% user acquisition growth across global markets\n• Worked with over 30 brands and drove insane results for them.\n\nIn this 1-hour power session, you'll get:\n\n• A deep dive analysis of your current marketing strategy\n• Identification of quick wins and growth opportunities\n• Custom-tailored recommendations for your specific market\n• Data-driven insights to optimize your marketing spend\n• Clear, actionable steps to improve your conversion rates\n\nPerfect for:\n\n• Startup founders looking to scale\n• Marketing managers seeking fresh strategies\n• Business owners wanting to optimize their digital presence\n• Teams stuck in their growth journey\n\nBonus: Receive a summary report of key recommendations after our session.\n\nLimited slots available each week. Book now to transform your marketing approach and unlock your business's growth potential.",
